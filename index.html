@@ -7,58 +7,98 @@
 <meta name="googlebot" content="noindex, nofollow">
 <title>Arxiu de Vídeos Familiars</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,400;9..144,0,500;9..144,0,600;9..144,1,500;9..144,1,600&family=Libre+Franklin:wght@400;500;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,400;9..144,0,500;9..144,0,600;9..144,0,700;9..144,1,500;9..144,1,600&family=Libre+Franklin:wght@400;500;600;700&display=swap');
   :root{
     --paper:#f4ece0; --ink:#2e2620; --ink-soft:#6b5d4d;
     --accent:#a8431f; --accent-soft:#c2693f; --gold:#b08322;
-    --card:#fbf6ee; --line:#d8c9b3; --shadow:rgba(60,40,20,.14);
+    --card:#fbf6ee; --line:#d8c9b3; --shadow:rgba(60,40,20,.16);
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   html{-webkit-text-size-adjust:100%;}
   body{
-    font-family:'Libre Franklin',sans-serif; background:var(--paper);
-    background-image:
-      radial-gradient(circle at 20% 10%, rgba(176,131,34,.05), transparent 40%),
-      radial-gradient(circle at 80% 90%, rgba(168,67,31,.05), transparent 45%);
-    color:var(--ink); line-height:1.5; min-height:100vh; padding-bottom:40px;
+    font-family:'Libre Franklin',sans-serif; background:var(--paper); color:var(--ink);
+    line-height:1.5; min-height:100vh; padding-bottom:50px;
+    background-image:radial-gradient(circle at 18% 8%, rgba(176,131,34,.06), transparent 42%), radial-gradient(circle at 82% 92%, rgba(168,67,31,.06), transparent 46%);
   }
-  body::before{
-    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
-  }
-  .wrap{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:0 18px;}
-  header{text-align:center;padding:38px 0 22px;}
-  .kicker{text-transform:uppercase;letter-spacing:.32em;font-size:.7rem;font-weight:600;color:var(--accent);margin-bottom:12px;}
-  h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2rem,7vw,3.1rem);line-height:1.05;letter-spacing:-.01em;}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");}
+  .wrap{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 18px;}
+  header{text-align:center;padding:34px 0 12px;}
+  .kicker{text-transform:uppercase;letter-spacing:.32em;font-size:.68rem;font-weight:600;color:var(--accent);margin-bottom:10px;}
+  h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2rem,6vw,3.2rem);line-height:1.04;letter-spacing:-.01em;}
   h1 em{font-style:italic;color:var(--accent);}
-  .sub{margin-top:14px;color:var(--ink-soft);font-size:1.02rem;max-width:46ch;margin:14px auto 0;}
-  .rule{width:64px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--gold),var(--accent));margin:22px auto 0;}
-  .searchbar{position:sticky;top:0;z-index:5;padding:16px 0 14px;background:linear-gradient(var(--paper) 70%, rgba(244,236,224,0));}
-  .search-inner{position:relative;}
-  .search-inner svg{position:absolute;left:18px;top:50%;transform:translateY(-50%);width:22px;height:22px;stroke:var(--ink-soft);pointer-events:none;}
-  #q{width:100%;font-family:'Libre Franklin',sans-serif;font-size:1.15rem;padding:18px 18px 18px 52px;border:2px solid var(--line);border-radius:16px;background:var(--card);color:var(--ink);box-shadow:0 4px 18px var(--shadow);transition:border-color .2s, box-shadow .2s;}
+  .sub{margin:13px auto 0;color:var(--ink-soft);font-size:1rem;max-width:48ch;}
+  .rule{width:60px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--gold),var(--accent));margin:18px auto 0;}
+  .controls{position:sticky;top:0;z-index:20;padding:16px 0 14px;background:linear-gradient(var(--paper) 72%, rgba(244,236,224,0));}
+  .search-inner{position:relative;max-width:620px;margin:0 auto;}
+  .search-inner svg{position:absolute;left:18px;top:50%;transform:translateY(-50%);width:21px;height:21px;stroke:var(--ink-soft);pointer-events:none;}
+  #q{width:100%;font-family:'Libre Franklin',sans-serif;font-size:1.1rem;padding:16px 16px 16px 50px;border:2px solid var(--line);border-radius:15px;background:var(--card);color:var(--ink);box-shadow:0 4px 16px var(--shadow);transition:border-color .2s,box-shadow .2s;}
   #q::placeholder{color:#b3a48f;}
-  #q:focus{outline:none;border-color:var(--accent-soft);box-shadow:0 6px 22px var(--shadow);}
-  .count{text-align:center;margin-top:10px;font-size:.85rem;color:var(--ink-soft);}
+  #q:focus{outline:none;border-color:var(--accent-soft);box-shadow:0 6px 20px var(--shadow);}
+  .toolbar{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:12px;flex-wrap:wrap;}
+  .toggle{display:inline-flex;background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:4px;box-shadow:0 2px 8px var(--shadow);}
+  .toggle button{font-family:'Libre Franklin',sans-serif;font-weight:600;font-size:.92rem;border:none;background:transparent;color:var(--ink-soft);padding:8px 16px;border-radius:9px;cursor:pointer;display:inline-flex;align-items:center;gap:7px;transition:all .15s;}
+  .toggle button.active{background:linear-gradient(135deg,var(--accent),var(--accent-soft));color:#fff;box-shadow:0 2px 8px rgba(168,67,31,.35);}
+  .toggle button svg{width:16px;height:16px;}
+  .count{text-align:center;margin-top:11px;font-size:.84rem;color:var(--ink-soft);}
   .count b{color:var(--accent);font-weight:600;}
-  .list{margin-top:8px;display:flex;flex-direction:column;gap:14px;}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 18px 16px;box-shadow:0 2px 10px var(--shadow);display:flex;flex-direction:column;gap:10px;animation:rise .4s ease both;}
-  @keyframes rise{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
-  .card-top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
-  .clip-badge{font-family:'Fraunces',serif;font-weight:600;font-size:.95rem;background:var(--ink);color:var(--paper);padding:4px 12px;border-radius:999px;}
-  .desc{font-size:1.02rem;color:var(--ink);line-height:1.55;}
-  .desc mark{background:rgba(176,131,34,.32);color:inherit;border-radius:3px;padding:0 1px;}
-  .play{align-self:flex-start;margin-top:4px;display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:1rem;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent-soft));border:none;border-radius:12px;padding:12px 20px;cursor:pointer;text-decoration:none;box-shadow:0 3px 10px rgba(168,67,31,.3);transition:transform .12s;}
-  .play:active{transform:scale(.97);}
-  .play svg{width:18px;height:18px;fill:#fff;}
-  .play.missing{background:#e7dcc9;color:var(--ink-soft);box-shadow:none;cursor:default;}
-  .play.missing svg{fill:var(--ink-soft);}
-  .empty{text-align:center;padding:46px 20px;color:var(--ink-soft);}
-  .empty .big{font-family:'Fraunces',serif;font-size:1.4rem;color:var(--ink);margin-bottom:8px;}
-  footer{text-align:center;margin-top:34px;font-size:.8rem;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:18px;}
-  .banner{border-radius:12px;padding:12px 16px;margin:0 0 16px;font-size:.86rem;text-align:center;}
+  .banner{border-radius:12px;padding:11px 16px;margin:0 auto 14px;font-size:.85rem;text-align:center;max-width:620px;}
   .banner.warn{background:rgba(176,131,34,.12);border:1px solid rgba(176,131,34,.4);color:var(--ink-soft);}
   .banner.ok{background:rgba(60,120,60,.1);border:1px solid rgba(60,120,60,.35);color:#3a5a30;}
+
+  /* GRAELLA tipus Netflix */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px;margin-top:6px;}
+  .tile{position:relative;border-radius:14px;overflow:hidden;background:var(--card);border:1px solid var(--line);box-shadow:0 3px 12px var(--shadow);cursor:pointer;text-decoration:none;color:inherit;display:block;animation:rise .4s ease both;transition:transform .18s,box-shadow .18s;}
+  .tile:hover{transform:translateY(-4px) scale(1.015);box-shadow:0 12px 28px var(--shadow);}
+  @keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  .thumb{position:relative;aspect-ratio:16/10;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+  .thumb img{width:100%;height:100%;object-fit:cover;display:block;}
+  .thumb .fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;}
+  .thumb .fallback .ic{font-size:2.6rem;filter:saturate(.85);}
+  .thumb .fallback .yr{font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:1.5rem;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.35);}
+  .thumb .grain{position:absolute;inset:0;opacity:.13;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+  .play-ov{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(20,12,6,.0);transition:background .18s;}
+  .tile:hover .play-ov{background:rgba(20,12,6,.28);}
+  .play-ov .circ{width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(.7);transition:all .2s;}
+  .tile:hover .play-ov .circ{opacity:1;transform:scale(1);}
+  .play-ov .circ svg{width:22px;height:22px;fill:var(--accent);margin-left:3px;}
+  .tile .corner{position:absolute;top:10px;left:10px;font-family:'Fraunces',serif;font-weight:600;font-size:.8rem;background:rgba(46,38,32,.82);color:var(--paper);padding:3px 10px;border-radius:999px;backdrop-filter:blur(3px);}
+  .tile.pending .corner{background:rgba(120,110,95,.85);}
+  .tbody{padding:12px 13px 14px;}
+  .tbody .yr-tag{font-family:'Fraunces',serif;font-style:italic;font-weight:600;color:var(--accent);font-size:1.05rem;}
+  .tbody .dsc{font-size:.9rem;color:var(--ink);line-height:1.45;margin-top:3px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+  .tbody .dsc mark{background:rgba(176,131,34,.34);border-radius:3px;padding:0 1px;}
+  .pend-lbl{position:absolute;bottom:10px;right:10px;font-size:.7rem;font-weight:600;background:rgba(120,110,95,.9);color:#fff;padding:2px 8px;border-radius:999px;}
+
+  /* TIMELINE */
+  .timeline{margin-top:10px;position:relative;}
+  .tl-year{margin:0 0 6px;padding-top:18px;}
+  .tl-year h2{font-family:'Fraunces',serif;font-weight:700;font-size:1.8rem;color:var(--accent);display:flex;align-items:center;gap:14px;}
+  .tl-year h2::after{content:"";flex:1;height:2px;background:linear-gradient(90deg,var(--line),transparent);}
+  .tl-items{display:flex;flex-direction:column;gap:10px;padding:6px 0 8px 4px;}
+  .tl-row{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:13px;padding:12px 14px;box-shadow:0 2px 9px var(--shadow);text-decoration:none;color:inherit;transition:transform .15s,box-shadow .15s;animation:rise .35s ease both;}
+  .tl-row:hover{transform:translateX(4px);box-shadow:0 6px 16px var(--shadow);}
+  .tl-ic{flex-shrink:0;width:46px;height:46px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;}
+  .tl-main{flex:1;min-width:0;}
+  .tl-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;}
+  .tl-clip{font-family:'Fraunces',serif;font-weight:600;font-size:.82rem;background:var(--ink);color:var(--paper);padding:2px 9px;border-radius:999px;}
+  .tl-yr{font-family:'Fraunces',serif;font-style:italic;font-weight:600;color:var(--accent);font-size:.95rem;}
+  .tl-dsc{font-size:.92rem;color:var(--ink);margin-top:4px;line-height:1.45;}
+  .tl-dsc mark{background:rgba(176,131,34,.34);border-radius:3px;padding:0 1px;}
+  .tl-play{flex-shrink:0;align-self:center;width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-soft));display:flex;align-items:center;justify-content:center;}
+  .tl-play svg{width:16px;height:16px;fill:#fff;margin-left:2px;}
+  .tl-row.pending .tl-play{background:#d8cab4;}
+  .tl-row.pending .tl-play svg{fill:var(--ink-soft);}
+
+  .empty{text-align:center;padding:50px 20px;color:var(--ink-soft);grid-column:1/-1;}
+  .empty .big{font-family:'Fraunces',serif;font-size:1.4rem;color:var(--ink);margin-bottom:8px;}
+  .hidden{display:none!important;}
+  footer{text-align:center;margin-top:36px;font-size:.78rem;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:18px;}
+  @media(max-width:560px){
+    .grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:13px;}
+    .thumb .fallback .ic{font-size:2rem;}
+    .tbody .dsc{-webkit-line-clamp:2;}
+  }
 </style>
 </head>
 <body>
@@ -66,154 +106,209 @@
   <header>
     <div class="kicker">Arxiu familiar &middot; cintes digitalitzades</div>
     <h1>Els v&iacute;deos<br>de la <em>fam&iacute;lia</em></h1>
-    <p class="sub">Escriu una paraula &mdash; un nom, un lloc o un esdeveniment &mdash; i troba la cinta que busques.</p>
+    <p class="sub">Cerca un nom, un lloc o un esdeveniment. Canvia entre graella i l&iacute;nia del temps.</p>
     <div class="rule"></div>
   </header>
-  <div id="banner"></div>
-  <div class="searchbar">
+
+  <div class="controls">
     <div class="search-inner">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
-      <input id="q" type="search" inputmode="search" autocomplete="off" placeholder="Cerca: Nadal, Menorca, comuni&oacute;...">
+      <input id="q" type="search" inputmode="search" autocomplete="off" placeholder="Cerca: Nadal, Menorca, comuni&oacute;, viatge...">
+    </div>
+    <div class="toolbar">
+      <div class="toggle">
+        <button id="btnGrid" class="active" onclick="setView('grid')">
+          <svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+          Graella
+        </button>
+        <button id="btnTime" onclick="setView('time')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="4" x2="12" y2="20"/><circle cx="12" cy="7" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="13" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="18" r="1.3" fill="currentColor" stroke="none"/></svg>
+          L&iacute;nia del temps
+        </button>
+      </div>
     </div>
     <div class="count" id="count"></div>
   </div>
-  <div class="list" id="list"></div>
+
+  <div id="banner"></div>
+  <div class="grid" id="grid"></div>
+  <div class="timeline hidden" id="timeline"></div>
+
   <footer>Arxiu de v&iacute;deos familiars &middot; <span id="total"></span> cintes</footer>
 </div>
 
 <script>
-// (Nota: mantinc la llista d'enllaços original)
-const ENLLACOS = { "100": "https://drive.google.com/file/d/1mG1XzFTe2Z0qRPnP9JbOMwj4QLkSQzoi/view", "101": "https://drive.google.com/file/d/1M8x3PWJBzBkp7MkgE71a5GzdWfi9L3J6/view", "102": "https://drive.google.com/file/d/1IdsUcR7cAOwfyudvt643KmGhEcRmImrA/view", "103": "https://drive.google.com/file/d/16gzjTaJKnDKWu1rWSc41CWldcu0t5jgG/view", "104": "https://drive.google.com/file/d/1Jn_LfxGxBEaRkzfeAkJo4DDESA-skRFn/view", "105": "https://drive.google.com/file/d/1_vxZVffPY9ULMroyILEnJ0lYa_yAwyL5/view", "106": "https://drive.google.com/file/d/1VGg_Nta_0WNqt5UY92j-FtTtkRyKDi0o/view", "107": "https://drive.google.com/file/d/1Ex1-TAviVg8SUEqcoRlEhHJiD3R_zgDA/view", "108": "https://drive.google.com/file/d/1GJgm_HWp5XzAQ6jm_qkEAOAXepmYuQ--/view", "109": "https://drive.google.com/file/d/1NVOFzBOZdF34FkpIIMYLB-ips1bdpuNE/view", "110": "https://drive.google.com/file/d/1G4Znye7d0sBo3Re-8qlpEMt7T5ZBNPRi/view", "111": "https://drive.google.com/file/d/1PwYIowuXANE8DL8nJw_Nm65yEavT6_uy/view", "112": "https://drive.google.com/file/d/1gROXpC6M8c1nZej2Jxki7e5mI-FmXoUD/view", "113": "https://drive.google.com/file/d/1epKkMDf2CWYT5amdAAWISiEDiTGBSRwo/view", "114": "https://drive.google.com/file/d/1cfwXIWgVAbU0elD0Z4o2yNNu2PEQFH-Q/view", "115": "https://drive.google.com/file/d/1-a1bZxB5gro1wt6hrqGZB2try8X77QzR/view", "116": "https://drive.google.com/file/d/1FBhGlrLzAhlLV0GSFE8zFBIYmxmkegdB/view", "117": "https://drive.google.com/file/d/1E3A_9qivGVww0Us-2R2BhyuJrW_nZzJE/view", "118": "https://drive.google.com/file/d/1NoIO5P5-R-ul2L1ckySrfB4PTydAdR43/view", "119": "https://drive.google.com/file/d/1GxPk0zaM8gUFObV196z3MD_r0pooSbAQ/view", "120": "https://drive.google.com/file/d/1kU7gL0c4DjVuJQ1qtO0_JpfTC-RuvJvO/view", "121": "https://drive.google.com/file/d/1EtP1T0N9ct1mUNZRg2u8X62s6R5yffoc/view", "122": "https://drive.google.com/file/d/1mFlM2H6HSMIcQjYu1STpIY14oh93Sdse/view", "123": "https://drive.google.com/file/d/1Uo3BSWpk62Dq3Hxz9yTC0fBPlvfvOzGi/view", "124": "https://drive.google.com/file/d/1OO5NNsdDxYbIDu95S3bJY431e6wnoRS2/view", "125": "https://drive.google.com/file/d/1l2trtbthToFpMIBglmhKPBHja_O4Zj4l/view", "126": "https://drive.google.com/file/d/1wHcf4abf1TAFjg2zEyoe2yaC2zFOXZNX/view", "127": "https://drive.google.com/file/d/1eJ1bqgA1QVqcSnpCgosn0fs1om2sge8B/view", "128": "https://drive.google.com/file/d/1JNZ2bmyCkTzFwPkoKD6dp6cRxL2FEtjc/view", "129": "https://drive.google.com/file/d/1REc1s-_7KIy2SEnejXScpjS86UzHc9Jr/view", "130": "https://drive.google.com/file/d/15oWyt4e0Q0A9LcHoolr5yD2hW7mfMtaE/view", "131": "https://drive.google.com/file/d/1pXGHj6srOADgHPglgU4P0Q18omJALdpk/view", "132": "https://drive.google.com/file/d/1PZNy-TH97MZzaZV_GUkvVSRjKwXqFxF3/view", "133": "https://drive.google.com/file/d/1UHDVBOCyFsHVK3mEsnM_Ou5PaPeV1HXl/view", "134": "https://drive.google.com/file/d/1Ah8ZPILdRJvrlNRlRwZjUQvCScfu2QIu/view", "135": "https://drive.google.com/file/d/1QzkCKTj-b9dZtmPpxT9WVFI7_WzKFigH/view", "136": "https://drive.google.com/file/d/1uZSiKZ5vEDpwGw5VFpCyGvrGgJfGbKNa/view", "137": "https://drive.google.com/file/d/1qZRBwKykSqPqYL5ggQucYsTIhCzH10zZ/view", "138": "https://drive.google.com/file/d/1INY2OxHOdhJ4qWsLt4ylECI9QxLOLGbK/view", "139": "https://drive.google.com/file/d/1pTHE4sv8ANrUClteF9SNTbRkqKVG8Kd1/view", "140": "https://drive.google.com/file/d/1p4sY-ENFMnoiuGd28pD_kav6NdIxQjar/view", "141": "https://drive.google.com/file/d/1BRHOALh1V2Z3hOC10wTN3F6h8ZOeqeM-/view", "142": "https://drive.google.com/file/d/1B3BBPFIZxeSQeSuniJeAmNcvQgaxjMN5/view", "143": "https://drive.google.com/file/d/19q3soJZ2s2nToUt8_a4IrVYF9l39PVQj/view", "144": "https://drive.google.com/file/d/1DlGw6A8qqvz8lA7UUAUF8MxukhjqnMAE/view", "145": "https://drive.google.com/file/d/1t0UErQ8AYhRhbo0vlUvwMa0W7varPVTO/view", "146": "https://drive.google.com/file/d/1DHkOd_3EjOP6scwBQCA6if06F1stpHc6/view", "147": "https://drive.google.com/file/d/188c5Oxub0CUAlQ4Kp1HP-LwcKqHHg-qi/view", "148": "https://drive.google.com/file/d/1DGtWio-AmFHOn4YKxTMuIOl-CQeI4ahn/view", "149": "https://drive.google.com/file/d/1mnR6ChvFKRLXyY3mFXp4FsMH2t89HJ5k/view", "150": "https://drive.google.com/file/d/1JKN3SrzTHLxLTcQD7lKz9XmFD7ZFYhhF/view", "151": "https://drive.google.com/file/d/1UJFSBmwlbSUXcHp5pHCPMOoR_NgL339O/view", "152": "https://drive.google.com/file/d/1W4h6zNZOjF-4G1kVW_L12NIzuFmroW9g/view", "153": "https://drive.google.com/file/d/1umseK1kdgaQiKN1dx1Klwt7NuULP8Ntk/view", "154": "https://drive.google.com/file/d/10JBL8nuGk6CvgR9F5gh3_mLR_R_fzb_o/view", "155": "https://drive.google.com/file/d/1Jo2V-PoGKADizbSWBl_vCk1USiD8w2oC/view", "156": "https://drive.google.com/file/d/1X3yDTmuNLueUoE_shyPmSodwXGdR1c7q/view", "157": "https://drive.google.com/file/d/1QmKy9K5NZkRETK43vrP9MzYKRwmEzPvP/view", "158": "https://drive.google.com/file/d/1Jbvgt1PK4gRj-fTykMKwfNaw1vgLKqTT/view", "159": "https://drive.google.com/file/d/1n84a8i8UuB1XF99dKDBW4cVri4h5KL-X/view", "160": "https://drive.google.com/file/d/1WOMHInQgHsgzeh6Hrnh7x7VNl51FKAG_/view", "161": "https://drive.google.com/file/d/1v9IrSYz_0PxZVdeFEWS2sSdVfYdhP-ZG/view", "162": "https://drive.google.com/file/d/1alq5KcSyofGYjBWn7W5UxXm9QeGZJl2x/view", "163": "https://drive.google.com/file/d/18B8A_Rn3UhKII7Fc2mxeTSDK5aWq6rNH/view", "164": "https://drive.google.com/file/d/1z1NOp060sgOwK3X2dXxzayrSJpo_fDtp/view", "165": "https://drive.google.com/file/d/1gDEPsc61a9EsMgn_DjZj6weTDmj-w05j/view", "166": "https://drive.google.com/file/d/1CYaw1Y1zIsCgWr1cvCHJgQ82tN6wFp9Z/view", "167": "https://drive.google.com/file/d/1tchS8TgQ7VguJRBQsqMvEih6bvxLHnmp/view", "168": "https://drive.google.com/file/d/1xAUor17h-Mi9doKL7PaLUTMTKevBViOE/view", "169": "https://drive.google.com/file/d/1UrR0btWHdZevtb0NgBVVDLSEsTz8rIQT/view", "170": "https://drive.google.com/file/d/1_PvFN5OV7f5KXBvf4CxoCVJ1PeF7wSP-/view", "171": "https://drive.google.com/file/d/1zENqksWr3cyhzENSkuG89HX6dMhS1i9O/view", "172": "https://drive.google.com/file/d/1J005YjuD7REWjgPRlXYDFdeLpuiHD71K/view", "173": "https://drive.google.com/file/d/1GuJl4nj_618jkOvwTVtqpHwU_RXgWTBS/view", "174": "https://drive.google.com/file/d/1ak8taDu6P0dqLCqQABWaQ3O5ye4UUsNu/view", "175": "https://drive.google.com/file/d/1ITK2LmNt2jwuAm5FBeYOYtFkVXRs4iW4/view", "176": "https://drive.google.com/file/d/1IFoqqCLcJf2qFqs85mAL_qZWt2jN46zu/view"
+/* =====================================================================
+   ZONA D'ENLLAÇOS — enganxa aquí els enllaços del Drive per número.
+   (Pots substituir tot aquest bloc pel que et generi l'script del Drive.)
+   ===================================================================== */
+const ENLLACOS = {
+  "100": "https://drive.google.com/file/d/1mG1XzFTe2Z0qRPnP9JbOMwj4QLkSQzoi/view",
+  "101": "https://drive.google.com/file/d/1M8x3PWJBzBkp7MkgE71a5GzdWfi9L3J6/view",
+  "102": "https://drive.google.com/file/d/1IdsUcR7cAOwfyudvt643KmGhEcRmImrA/view",
+  "103": "https://drive.google.com/file/d/16gzjTaJKnDKWu1rWSc41CWldcu0t5jgG/view",
+  "104": "https://drive.google.com/file/d/1Jn_LfxGxBEaRkzfeAkJo4DDESA-skRFn/view",
+  "105": "https://drive.google.com/file/d/1_vxZVffPY9ULMroyILEnJ0lYa_yAwyL5/view",
+  "106": "https://drive.google.com/file/d/1VGg_Nta_0WNqt5UY92j-FtTtkRyKDi0o/view",
+  "107": "https://drive.google.com/file/d/1Ex1-TAviVg8SUEqcoRlEhHJiD3R_zgDA/view",
+  "108": "https://drive.google.com/file/d/1GJgm_HWp5XzAQ6jm_qkEAOAXepmYuQ--/view",
+  "109": "https://drive.google.com/file/d/1NVOFzBOZdF34FkpIIMYLB-ips1bdpuNE/view",
+  "110": "https://drive.google.com/file/d/1G4Znye7d0sBo3Re-8qlpEMt7T5ZBNPRi/view",
+  "111": "https://drive.google.com/file/d/1PwYIowuXANE8DL8nJw_Nm65yEavT6_uy/view",
+  "112": "https://drive.google.com/file/d/1gROXpC6M8c1nZej2Jxki7e5mI-FmXoUD/view",
+  "113": "https://drive.google.com/file/d/1epKkMDf2CWYT5amdAAWISiEDiTGBSRwo/view",
+  "114": "https://drive.google.com/file/d/1cfwXIWgVAbU0elD0Z4o2yNNu2PEQFH-Q/view",
+  "115": "https://drive.google.com/file/d/1-a1bZxB5gro1wt6hrqGZB2try8X77QzR/view",
+  "116": "https://drive.google.com/file/d/1FBhGlrLzAhlLV0GSFE8zFBIYmxmkegdB/view",
+  "117": "https://drive.google.com/file/d/1E3A_9qivGVww0Us-2R2BhyuJrW_nZzJE/view",
+  "118": "https://drive.google.com/file/d/1NoIO5P5-R-ul2L1ckySrfB4PTydAdR43/view",
+  "119": "https://drive.google.com/file/d/1GxPk0zaM8gUFObV196z3MD_r0pooSbAQ/view",
+  "120": "https://drive.google.com/file/d/1kU7gL0c4DjVuJQ1qtO0_JpfTC-RuvJvO/view",
+  "121": "https://drive.google.com/file/d/1EtP1T0N9ct1mUNZRg2u8X62s6R5yffoc/view",
+  "122": "https://drive.google.com/file/d/1mFlM2H6HSMIcQjYu1STpIY14oh93Sdse/view",
+  "123": "https://drive.google.com/file/d/1Uo3BSWpk62Dq3Hxz9yTC0fBPlvfvOzGi/view",
+  "124": "https://drive.google.com/file/d/1OO5NNsdDxYbIDu95S3bJY431e6wnoRS2/view",
+  "125": "https://drive.google.com/file/d/1l2trtbthToFpMIBglmhKPBHja_O4Zj4l/view",
+  "126": "https://drive.google.com/file/d/1wHcf4abf1TAFjg2zEyoe2yaC2zFOXZNX/view",
+  "127": "https://drive.google.com/file/d/1eJ1bqgA1QVqcSnpCgosn0fs1om2sge8B/view",
+  "128": "https://drive.google.com/file/d/1JNZ2bmyCkTzFwPkoKD6dp6cRxL2FEtjc/view",
+  "129": "https://drive.google.com/file/d/1REc1s-_7KIy2SEnejXScpjS86UzHc9Jr/view",
+  "130": "https://drive.google.com/file/d/15oWyt4e0Q0A9LcHoolr5yD2hW7mfMtaE/view",
+  "131": "https://drive.google.com/file/d/1pXGHj6srOADgHPglgU4P0Q18omJALdpk/view",
+  "132": "https://drive.google.com/file/d/1PZNy-TH97MZzaZV_GUkvVSRjKwXqFxF3/view",
+  "133": "https://drive.google.com/file/d/1UHDVBOCyFsHVK3mEsnM_Ou5PaPeV1HXl/view",
+  "134": "https://drive.google.com/file/d/1Ah8ZPILdRJvrlNRlRwZjUQvCScfu2QIu/view",
+  "135": "https://drive.google.com/file/d/1QzkCKTj-b9dZtmPpxT9WVFI7_WzKFigH/view",
+  "136": "https://drive.google.com/file/d/1uZSiKZ5vEDpwGw5VFpCyGvrGgJfGbKNa/view",
+  "137": "https://drive.google.com/file/d/1qZRBwKykSqPqYL5ggQucYsTIhCzH10zZ/view",
+  "138": "https://drive.google.com/file/d/1INY2OxHOdhJ4qWsLt4ylECI9QxLOLGbK/view",
+  "139": "https://drive.google.com/file/d/1pTHE4sv8ANrUClteF9SNTbRkqKVG8Kd1/view",
+  "140": "https://drive.google.com/file/d/1p4sY-ENFMnoiuGd28pD_kav6NdIxQjar/view",
+  "141": "https://drive.google.com/file/d/1BRHOALh1V2Z3hOC10wTN3F6h8ZOeqeM-/view",
+  "142": "https://drive.google.com/file/d/1B3BBPFIZxeSQeSuniJeAmNcvQgaxjMN5/view",
+  "143": "https://drive.google.com/file/d/19q3soJZ2s2nToUt8_a4IrVYF9l39PVQj/view",
+  "144": "https://drive.google.com/file/d/1DlGw6A8qqvz8lA7UUAUF8MxukhjqnMAE/view",
+  "145": "https://drive.google.com/file/d/1t0UErQ8AYhRhbo0vlUvwMa0W7varPVTO/view",
+  "146": "https://drive.google.com/file/d/1DHkOd_3EjOP6scwBQCA6if06F1stpHc6/view",
+  "147": "https://drive.google.com/file/d/188c5Oxub0CUAlQ4Kp1HP-LwcKqHHg-qi/view",
+  "148": "https://drive.google.com/file/d/1DGtWio-AmFHOn4YKxTMuIOl-CQeI4ahn/view",
+  "149": "https://drive.google.com/file/d/1mnR6ChvFKRLXyY3mFXp4FsMH2t89HJ5k/view",
+  "150": "https://drive.google.com/file/d/1JKN3SrzTHLxLTcQD7lKz9XmFD7ZFYhhF/view",
+  "151": "https://drive.google.com/file/d/1UJFSBmwlbSUXcHp5pHCPMOoR_NgL339O/view",
+  "152": "https://drive.google.com/file/d/1W4h6zNZOjF-4G1kVW_L12NIzuFmroW9g/view",
+  "153": "https://drive.google.com/file/d/1umseK1kdgaQiKN1dx1Klwt7NuULP8Ntk/view",
+  "154": "https://drive.google.com/file/d/10JBL8nuGk6CvgR9F5gh3_mLR_R_fzb_o/view",
+  "155": "https://drive.google.com/file/d/1Jo2V-PoGKADizbSWBl_vCk1USiD8w2oC/view",
+  "156": "https://drive.google.com/file/d/1X3yDTmuNLueUoE_shyPmSodwXGdR1c7q/view",
+  "157": "https://drive.google.com/file/d/1QmKy9K5NZkRETK43vrP9MzYKRwmEzPvP/view",
+  "158": "https://drive.google.com/file/d/1Jbvgt1PK4gRj-fTykMKwfNaw1vgLKqTT/view",
+  "159": "https://drive.google.com/file/d/15uDQguKk_zLplM1zLzVEd2dNDAAqOvOw/view",
+  "160": "https://drive.google.com/file/d/15iFET4vHUS8Kc9_hL-3b15kpGWObnSgQ/view",
+  "161": "https://drive.google.com/file/d/1v9IrSYz_0PxZVdeFEWS2sSdVfYdhP-ZG/view",
+  "162": "https://drive.google.com/file/d/1alq5KcSyofGYjBWn7W5UxXm9QeGZJl2x/view",
+  "163": "https://drive.google.com/file/d/13IATiQIA_v4XkBGbgcXkt0juKyiPC6i3/view",
+  "164": "https://drive.google.com/file/d/1z1NOp060sgOwK3X2dXxzayrSJpo_fDtp/view",
+  "165": "https://drive.google.com/file/d/1gDEPsc61a9EsMgn_DjZj6weTDmj-w05j/view",
+  "166": "https://drive.google.com/file/d/1CYaw1Y1zIsCgWr1cvCHJgQ82tN6wFp9Z/view",
+  "167": "https://drive.google.com/file/d/1tchS8TgQ7VguJRBQsqMvEih6bvxLHnmp/view",
+  "168": "https://drive.google.com/file/d/1xAUor17h-Mi9doKL7PaLUTMTKevBViOE/view",
+  "169": "https://drive.google.com/file/d/1BB7GgCHFudG3_KHWMq5ra-lW8yAOVA7U/view",
+  "170": "https://drive.google.com/file/d/1_PvFN5OV7f5KXBvf4CxoCVJ1PeF7wSP-/view",
+  "171": "https://drive.google.com/file/d/1zENqksWr3cyhzENSkuG89HX6dMhS1i9O/view",
+  "172": "https://drive.google.com/file/d/1J005YjuD7REWjgPRlXYDFdeLpuiHD71K/view",
+  "173": "https://drive.google.com/file/d/1GuJl4nj_618jkOvwTVtqpHwU_RXgWTBS/view",
+  "174": "https://drive.google.com/file/d/1ak8taDu6P0dqLCqQABWaQ3O5ye4UUsNu/view",
+  "175": "https://drive.google.com/file/d/1ITK2LmNt2jwuAm5FBeYOYtFkVXRs4iW4/view",
+  "176": "https://drive.google.com/file/d/1IFoqqCLcJf2qFqs85mAL_qZWt2jN46zu/view",
 };
+/* ===================================================================== */
 
-const DATA = [
- { "clip": 100, "desc": "Sopar Biosques i Carnaval 91 (9/2/91). Sopar a ca l’Albert Biosca. Divendres Sant 29/3/91 (Processó)" },
- { "clip": 101, "desc": "Bateig de l’Albert al restaurant (31/3/91). Naixement de l’Elena (6/6/93). Varicel·la i braç trencat de l’Albert (Octubre 93)" },
- { "clip": 102, "desc": "Celebració avançada nens (6/3/93). Zoo Barcelona (9/4/93). Naixement Xavier Magriñà (11/4/93). Aniversari Francesc (10/5/93). Anada a Viella tots 4 (27-28-29/8/93)" },
- { "clip": 103, "desc": "Naixement Albert (11-12/3/91). A casa dia (16/3/91) Anna Rosato. A casa dia (29/3/91) banyant-se. A casa dia (22/9/91) al parc. A casa en diversos dies" },
- { "clip": 104, "desc": "Imatges de prova (8/12/90). Tarragona: Àngel i Rosa, cassola d’arròs (8/12/90). Dia de Nadal 3r pis. Cagar el Tió a casa nostra. Cagar el Tió a Ca Pons. Nadal 90." },
- { "clip": 105, "desc": "(28/5/00) Comunió de l’Albert" },
- { "clip": 106, "desc": "Aniversari 65 anys Josep Maria Montcusí (Biosca) (13/6/92). Anada a Viella: (3-4-5-6/9/92)" },
- { "clip": 107, "desc": "Primera cinta filmada amb la càmera Panasonic (Octubre 90)" },
- { "clip": 108, "desc": "Cabo Kennedy/Florida/Viatge a El Salvador: Les últimes preses del viatge (Març 92). Viatge a Paris-Eurodisney (9-13/10/92) Part del viatge amb Talgo-Pendular. Arribada a Paris-Austellitz/Paris-Lyon i les vistes diverses del parc Euro-Disney. Vistes de la ciutat de Paris: Torre Eiffel i Notre-Damme entre d’altres." },
- { "clip": 109, "desc": "Festa de Cap d’any 2003/2004 i Reis. Festa de l’aniversari del Xavier Ferré Ferré. Festa dels 50 anys del Josep Maria Cinto. Festa de la trobada d’armats a El Pla de Santa Maria" },
- { "clip": 110, "desc": "Vacances de l’estiu 96 a Olot. Festes Nadal 96-97. Cap d’any a Rupit." },
- { "clip": 111, "desc": "Carnaval nens escoles d’el Pla (23/2/92). Carnaval a casa dels pares de la Berta. Carnaval del Pla 92. Braç enguixat Albert abril 92. Mona (20/4/92)" },
- { "clip": 112, "desc": "Vacances d’estiu a EURODISNEY/París. (Setmana del 27/6/95 al 7/7/95). Vistes del viatge d’anada del 1r i 2n dia a Eurodisney i al Davy Crocket Ranch. (1a CINTA)" },
- { "clip": 113, "desc": "Vacances d’estiu a EURODISNEY/París. (Setmana del 27/6/95 al 7/7/95) (2a CINTA)" },
- { "clip": 114, "desc": "Vacances d’estiu a EURODISNEY/París. (Setmana del 27/6/95 al 7/7/95) (3a CINTA). Barri del Carme 1995 - 10è aniversari juliol. Fira 1995 - Pavelló i desfilada Elena. Nadal 1995-1996/Cap d’any a Rupit." },
- { "clip": 115, "desc": "Anada a Viella: 3,4,5,6 setembre 1992. Casament de Maria dels Àngels i Rafel (12 setembre 1992, Poblet). Filmacions del pavelló (26/9/92)" },
- { "clip": 116, "desc": "36è aniversari Gemma 11/8/01. Maquillatge de la Gemma, Elena (Setembre 01), Nadal 2001. Festes, dinar, cagar el tió, Valls (St. Esteve),  1er aniversari Joan Magriñà. Carnaval 2002 (nens al carrer). Pintar la saleta (22/03/02). Tots els tres nens al nostre llit damunt. L’Hotel Nuñez Urgoll/ Roca Sr. Roca (Fiat) (18/04/02). Sopar de cal Faló (Reis 4/01/03). Trobada Magriñà-González amb nosaltres 5/1/03. Reis 2003:Regals a ca la Padrina. Sopar a cal Magriñà-Fontanillas. Aniversari Joan Ramon 43 anys (31/01/03)" },
- { "clip": 117, "desc": "Montserrat a peu. (1,2,3/11/91)" },
- { "clip": 118, "desc": "Fragments del dia de Nadal a casa nostra (23/12/05). Fragments del sopar de cap d’any 2005/2006. Comunió de l’Ignasi 25/05/06. 50è aniversari de la Maria Amàlia (13/06/06). Festes de Nadal, Cap d’any i Reis (2006/2007), 70 anys de la Consol (4/2/07). 80 anys de la padrina Pepita Barrina (20/01/08) (Dia de la Festa)" },
- { "clip": 119, "desc": "Setmana Santa 1994: Anada a Roses. Francesc amb el peu envenat. Aniversari del Francesc. Aniversari de l’Eva Rosato (23/5/94). Aniversari de l’Elena (3/6/94)." },
- { "clip": 120, "desc": "Anada a Andorra 3-4 setembre (per lliure) amb la colla de sardanes. Anada a Caldea el dia 3/9/94. Dinar del “homes” a la Vallesca (11/9/94). Nadal 94: Festes diverses, teatre Albert, regals dia de Nadal, cagar el tió a casa i a cal Pons." },
- { "clip": 121, "desc": "Filmacions diverses octubre/novembre 1990. Desfilada de models, cal Biosca, casa nostra 3r pis, dinar casa Consol (avi Artur), dinar a casa nostra 3r pis/Valentí, dinar casa nova oncle Joan." },
- { "clip": 122, "desc": "Funció de l’Albert “La Fàbrica”(6/6/03). Aniversari de l’Elena 10 anys(6/6/03). Confirmació del Francesc: Església i festa (27/9/03). Festes de Nadal del 2003. Aniversari del Xavier Ferré i Ferré (27/12/03) 20 anys." },
- { "clip": 123, "desc": "Vacances a Menorca 29/6/01 - 11/07/01" },
- { "clip": 124, "desc": "50 anys de casats dels padrins Rafel i Pepita ( Abril 2003)" },
- { "clip": 125, "desc": "Aniversari de l’Eduard a la botiga del Josep Maria (9/10/05). Viatge a Tenerife (23/10/05-30/10/05)" },
- { "clip": 126, "desc": "1 Viatge a Miami / El Salvador. Dies 2, 3, 4 de març 1992. Vistes dels aeroports de BCN, MAD, MIA. Vistes avió interior i exterior (CANADÀ). Vistes de l’hotel i derivats de Miami International. Arribada a El Salvador. Vistes de l’aeroport fins a la casa dels oncles. Vistes del magatzem, botiga i annexos del negoci dels oncles." },
- { "clip": 127, "desc": "2 Viatge a El Salvador. Dies 4 i 5 de març 1992. Dia 4: Vistes nocturnes (deficients) del sopar i la vivenda dels pares de la Deby. Dia 5: Vistes del parament floral a la vivenda dels oncles. Regal de noces de la Deby i Xavier entre d’altres. Festa nocturna a casa dels Artiñano." },
- { "clip": 128, "desc": "3 Viatge a El Salvador. Dies 7, 8 i 9 de març del 1992. Part del casament, preses vàries de diferents escenes. Finca de Sant Diego (oncles) i finca de Sihuapilapa (Jokish - Soberano)" },
- { "clip": 129, "desc": "4 Viatge a El Salvador. Dia 8 març de 1992. Sihuapilapa: Vivenda de platja dels Jokish-Soberano. Dia 10 març 1992. Cerro Verde volcà Izalco." },
- { "clip": 130, "desc": "5 Viatge a El Salvador. Dia 10 de març del 1992: Preses diverses del Cerro Verde i el Volcà Izalco. Llac de Coatepeque. Dia 11 de març del 1992: Berenar a la vivenda de Carmen Elena i vàries preses de la casa. Dia 12 de març del 1992. Algunes preses del Tazumal a Chalchuapa." },
- { "clip": 131, "desc": "6 Viatge a El Salvador. Dia 12 de març del 1992: Vistes de Chalchuapa i les restes històriques del Tazumal. Dia 14 de març del 1992: Anada a la barra de Santiago (Finca dels Artiñano-Maestre) “Quasi bé un safari” Diferents preses i escenes de les activitats allí (Jet Sky, banyada a la bacana, etc.)" },
- { "clip": 132, "desc": "7 Viatge a El Salvador. Dia 14 i 15 març del 1992. Anada a la finca, activitats i vistes de la Barra de Santiago. Canals interns de la Barra de Santiago. Tornada cap a San Salvador: Vistes del viatge de tornada i arribada  la casa dels oncles." },
- { "clip": 133, "desc": "8 Viatge a El Salvador. Dia 16 març 1992: Arribada a Miami i vistes de l’apartament dels oncles. Vistes nocturnes de diferents barris de Miami. Dia 17 de març del 1992: Vistes diurnes de Miami i els diferents shows i atraccions al Sea Aquarium de Miami." },
- { "clip": 134, "desc": "9 Viatge a El Salvador. Dia 17 de març de 1992: Miami vistes d’atraccions del PARROT JUNGLE i del parc. Dia 18 de març de 1992: DISNEYWORLD EPCOT. Dia 19 de març de 1992: DISNEYWORLD vistes dels estudis de MGM." },
- { "clip": 135, "desc": "10 Viatge a El Salvador. Dia 19 de març de 1992: DISNEYWORLD, vistes dels estudis de de la MGM. Dia 20 de març del 1992: DISNEYWORLD, vistes del MAGIC KINGDOM. Dia 21 de març del 1992: Cap Kennedy." },
- { "clip": 136, "desc": "Filmacions desembre 90 - gener 91 ( Nadal 1990 ) Arribada del patge dels reis 1/01/91. Filmacions pessebre casa oncles. Arribada dels reis 5/01/91. Lliurament dels regals i arribada dels reis al 3r pis. Lliurament dels reis de Valls. Falo-Dalmau, Rosato-Albareda 6/01/91." },
- { "clip": 137, "desc": "Sortida a la muntanya amb el NISSAN de l’Anton 29/06/91 Rojals. Sortida a la muntanya amb el NISSAN de l’Anton 13/07/91 Selmella/Montagut. Nevades del dia 22 i 23 de gener del 1992. Les primeres passes de l’Albert 2/2/92. Disfresses del dia 23/2/92." },
- { "clip": 138, "desc": "Nadal, Cap d’any i Reis del 1998/99. Carnavals, recitals de música Albert. Dinar dels amics F.Professional de Valls. Aniversari de l’Elena, fent pipi els nens i inicis vacances estiu del 1999." },
- { "clip": 139, "desc": "Nadal 99. Cap d'any i Reis 2000. Disfressa de princesa de l'Elena. St. Jordi del 2000, dinar a cal Carles. Sortida a Núria 28/29 abril 2000 entre d'altres filmacions: Final de curs nens i nena a el Pla. Filmacions eròtiques de la Gemma. Recollir premi a Santes Creus del Francesc 1/10/00. Dinar a cal Vinyet tots els cintos i oncles 6/12/00. Regals del Pare Noel del dia 25 de desembre del 2000." },
- { "clip": 140, "desc": "Aniversari de la Teresa Albareda - 40 anys a Ca Fèlix. Festes de Nadal 2004/2005. 14 anys de l’Albert. Sopar. Detalls d’un esmorzar de diumenge. Ball de fi de curs de l’Elena a l’abadia (parròquia). Filmació de l’Elena amb la protecció del cabell el dia del casament de l’Eduard. Filmacions prèvies 2/07/05." },
- { "clip": 141, "desc": "Menorca 1994 (2) (Juny-juliol) Filmacions de la nena i la resta de família - Estiu del 94. Andorra - Encamp (3-4 setembre ’94)" },
- { "clip": 142, "desc": "Bateig de l’Elena: Divendres 30 juliol 93 - Sopar de Cal Biosca. Dissabte 31 de juliol 93 - Bateig de l’Elena a l’església i festa al restaurant. Diumenge 1 agost 93 dinar al Carreró de Cal Faló. Diumenge dia 22 agost del 93 - Dia de les Dones al Carreró de Cal Faló." },
- { "clip": 143, "desc": "Comunió del Francesc (2). Sortida als Sants Metges (14 setembre 97). Bateig de l’Ignasi (12 octubre 97). Nadal 97-98. Àpats i sortida a Rupit. Reis 98. Carnaval 98. Setmana Santa 98: Sortida a la casa de pagès francesa. Final de curs 97/98: Obra de Teatre." },
- { "clip": 144, "desc": "Cavalcada de Reis i repartiment (5 de gener 94). Dia 6 de gener 94: Reis al 3r Pis amb Dalmau-Faló/Rosato-Albareda. Dia 12 de febrer del 94: Carnaval i la rua del 94. Dia 20 de febrer 94: la nena amb les “carrutxes”. Filmacions dels nens difressats (26 FEBRER 94). Calçotada a cal Biosca (6 de març 94). Calçotada a cal Faló (13 de març 94)" },
- { "clip": 145, "desc": "Casament de l’Eduard (2/7/05). Recollir (l’Elena) el premi de l’Esclat (7/7/05). Aniversari de la Gemma - 40 anys (11/08/05). Festa de celebració dels 40 anys de ka Gemma al Trastevere (21/08/05)" },
- { "clip": 146, "desc": "Fira 1991 novembre. Sopar Cap d’Any/Casa tiets/Biosques 31-12-91. Reis 1992." },
- { "clip": 147, "desc": "Dia de Nadal 2000 a casa nostra. Cap d’any Sant Joan de l’Erm, nosaltres, Àngels i Albert Biosca. Reis 2001 i façana il·luminada de casa nostra entre d’altres. Jubilació de l’Alberta Biosa a Cal Biosca amb tots (11 de març 2001). Vacances a Menorca (21/06/01)." },
- { "clip": 148, "desc": "Nadal 95-96. Cap d’any a Rupit (2). Disfresses de Carnaval ’96: Els nens. Aniversari 5 anys Albert: Sopar Colla. Dia de la Mona (A Valls i al Pla). Dia 21 abril ’96: Casament del Joan Boronat. Dia 27 de maig ’96: Excursió al Tibidabo." },
- { "clip": 149, "desc": "Comunió Elena (2002). Aniversari de la Gemma - 37 anys (11/08/02). Saleta d’estiu - Esmorzar dels nens. Filmacions de la Gemma amb cuetes. Muntatge de l’arbre i pessebre de Nadal (Setamana del pont del 6/8-12/02). Sopar de la nit de Nadal a Cal Carles 24/12/02. Dinar de Nadal a casa nostra (25/12/02). Filmacions del meu sopar de l’aniversari 31/01/03." },
- { "clip": 150, "desc": "Casament Carles i Anna, 23 abril del 1995. Comunió Jordi Garcia, 28 de maig de 1995." },
- { "clip": 151, "desc": "Dia 25 de desembre 1993. “Cagar el tió” al 3r pis amb tots nosaltres, Boronat i Falons. Pastorets: nen Jesús (Elena). Dia 31/12/93: Sopar de Cap d’Any. Dia 1/1/94: Patge Reial i “Cagar el Tió” a Ca Pons." },
- { "clip": 152, "desc": "Dia 28 de novembre de 1993. Celebració dels 65 anys del pare a cal “Sapero” de Santes Creus. Dia 25 de desembre de 1993. Celebració d’una part del dinar de Nadal (25 de desembre del 1993 al 3r pis)" },
- { "clip": 153, "desc": "Dia 23 juny 1991. Revetlla de Sant Joan a Ca Pons. Dia 13 de juliol 1991: Sopar organització barri a casa tiets xocolatada a la matinada. Dia 26 juny del 1993: Sopar de l’organització del barri a Casa dels oncles." },
- { "clip": 154, "desc": "Diada bicicleta. Preses del nen. Preses de la comunió de l’Albert Masgoret. Dia de Corpus Christi. Dia 23 juny de 1991: Ca Pons" },
- { "clip": 155, "desc": "31 de maig de 1992. Comunió del Xavier. Dia 24 i 25 de desembre de 1992: Nadal - (algunes filmacions)" },
- { "clip": 156, "desc": "156 - Cap d'any 94 - 95. Nit de reis 1995. Reis any 1995, Dalmau, Faló, Rosato i Albareda. Calçotada Cal Biosca- 5 febrer 1995. Calçotada Cal Biosca 11 març 1995, aniversari Albert. Dia de Rams-Disfressa a Ca Pons. 13 maig 95 Fira Solsona." },
- { "clip": 157, "desc": "Passi de modes: Anton Montserrat a la pista de la cooperativa. Novembre 1990." },
- { "clip": 158, "desc": "Dia 31 de març del 91. Dia de la mona. Paella d’arròs a cal Biosca." },
- { "clip": 159, "desc": "Bateig de l’Albert (1a CINTA) Església/A casa (Biosques) 31/03/1991" },
- { "clip": 160, "desc": "Bateig de Jordi Dalmau i Falo, 28 de juliol de 1991. Esmorzar a Rojals nosaltres, 27 de juliol de 1991. Dia 2 d’octubre de 1994, filmacions de l’Elena." },
- { "clip": 161, "desc": "Festes desembre/nadal 1991. Família Capdevila-Cucurull (Úrsula) 8/12/91. Nit bona, arbre de nadal 24/12/91. Dia de Nadal, dinar i tió 25/12/91. Patge dels Reis/Cal Faló 29/12/91. Cap d’any Biosques 31/12/91. Dinar de Reis, casa dels padrins (6/1/92)" },
- { "clip": 162, "desc": "Dia 3 agost de 1991. Sortida amb Anton i Maite a la Mussara i Siurana. Menorca 24/31 d’agost del 1991 (1)" },
- { "clip": 163, "desc": "Menorca 24-31 d’agost de 1991 (2a CINTA) . Menorca 30 de juny de 1994 (1). Ciutadella, vista general dels apartaments." },
- { "clip": 164, "desc": "Viatge a Paris EURODISNEY (OCTUBRE 92) (2)" },
- { "clip": 165, "desc": "Nadal any 1992. “Cagar el tió” i dinar del dia de Nadal al 3r PIS. “Cagar el Tió” a Cal Pons. Revetlla de final d’any a casa nostra. Teresa, Ari, Angels, Albert i nosaltres." },
- { "clip": 166, "desc": "Reis 1993/El Pla i Valls (Pis Josep Ramon-Berta). Dinar dels 65 anys de la padrina (El mas del Plata)" },
- { "clip": 167, "desc": "Dia 25 d’abril de 1993. Festa dels 40 anys del casament dels padrins. Dia 17 de novembre de 1993: Fotografia familiar dels fills per a la celebració dels 65 anys dels padrí. Dia 28 de novembre de 1993: Celebració dels 65 anys del pare a cal Saperó de Santes Creus." },
- { "clip": 168, "desc": "Filmacions diverses de treballs. 9 de juny de 1993: Instal·lació de la bomba del pou de l’hort del Ramon “Panseta”. 7 de gener de 1994. Instal·lació de la xemeneia de la Carme Montcusí ( Francesc) amb cordes. Dia 5 de març de 1994: Treballs efectuats a la planta de formigons del Garganté." },
- { "clip": 169, "desc": "Cap d’any a Rupit 1997. Reis 1997. Carnaval 1997. Vallesca." },
- { "clip": 170, "desc": "Viella/Baqueira/Beret 29 agost 1993. Olot dies 18 i 19 setembre 1993." },
- { "clip": 171, "desc": "Filmacions Fira 1994. Filmacions Baixas-Lehmberg setembre 1994" },
- { "clip": 172, "desc": "Eivissa-Estiu 1999 (Agost/Setembre) (2a CINTA)" },
- { "clip": 173, "desc": "Paris 1998 (Estiu). Sortida del 13 setembre de 1998 als boscos de Poblet." },
- { "clip": 174, "desc": "Viatge a Tenerife 23-30 octubre 2005. Fragments del sopar de Nadal a cal Carles i Anna (24/12/05). Fragments d’obrir els regals de l’arbre de Nadal a casa el dia 25/12/05." },
- { "clip": 175, "desc": "1a Comunió Francesc 25 de maig de 1997" },
- { "clip": 176, "desc": "Difusió publicitaria INSTAL·LACIONS JOAN RAMON FERRÉ" }
-];
+const DATA = [{"clip": 100, "year": "1991", "desc": "Sopar Biosques i Carnaval 91 (9/2/91). Sopar a ca l’Albert Biosca. Divendres Sant 29/3/91 (Processó)", "tema": "carnaval", "icona": "🎭", "col": "#7a4fa0", "url": "https://drive.google.com/file/d/1mG1XzFTe2Z0qRPnP9JbOMwj4QLkSQzoi/view", "sortYear": 1991}, {"clip": 101, "year": "1991–1993", "desc": "Bateig de l’Albert al restaurant (31/3/91). Naixement de l’Elena (6/6/93). Varicel·la i braç trencat de l’Albert (Octubre 93)", "tema": "cerimonia", "icona": "⛪", "col": "#6a4a8f", "url": "https://drive.google.com/file/d/1M8x3PWJBzBkp7MkgE71a5GzdWfi9L3J6/view", "sortYear": 1991}, {"clip": 102, "year": "1993", "desc": "Celebració avançada nens (6/3/93). Zoo Barcelona (9/4/93). Naixement Xavier Magriñà (11/4/93). Aniversari Francesc (10/5/93). Anada a Viella tots 4 (27-28-29/8/93)", "tema": "aniversari", "icona": "🎂", "col": "#b06a1f", "url": "https://drive.google.com/file/d/1IdsUcR7cAOwfyudvt643KmGhEcRmImrA/view", "sortYear": 1993}, {"clip": 103, "year": "1991", "desc": "Naixement Albert (11-12/3/91). A casa dia (16/3/91) Anna Rosato. A casa dia (29/3/91) banyant-se. A casa dia (22/9/91) al parc. A casa en diversos dies", "tema": "naixement", "icona": "🍼", "col": "#b0526f", "url": "", "sortYear": 1991}, {"clip": 104, "year": "1990", "desc": "Imatges de prova (8/12/90). Tarragona: Àngel i Rosa, cassola d’arròs (8/12/90). Dia de Nadal 3r pis. Cagar el Tió a casa nostra. Cagar el Tió a Ca Pons. Nadal 90.", "tema": "nadal", "icona": "🎄", "col": "#9c2b2b", "url": "", "sortYear": 1990}, {"clip": 105, "year": "2000", "desc": "(28/5/00) Comunió de l’Albert", "tema": "cerimonia", "icona": "⛪", "col": "#6a4a8f", "url": "https://drive.google.com/file/d/1_vxZVffPY9ULMroyILEnJ0lYa_yAwyL5/view", "sortYear": 2000}, {"clip": 106, "year": "1992", "desc": "Aniversari 65 anys Josep Maria Montcusí (Biosca) (13/6/92). Anada a Viella: (3-4-5-6/9/92)", "tema": "aniversari", "icona": "🎂", "col": "#b06a1f", "url": "", "sortYear": 1992}, {"clip": 107, "year": "1990", "desc": "Primera cinta filmada amb la càmera Panasonic (Octubre 90)", "tema": "familia", "icona": "🎞️", "col": "#7a6a52", "url": "", "sortYear": 1990}, {"clip": 108, "year": "1992", "desc": "Cabo Kennedy/Florida/Viatge a El Salvador: Les últimes preses del viatge (Març 92). Viatge a Paris-Eurodisney (9-13/10/92) Part del viatge amb Talgo-Pendular. Arribada a Paris-Austellitz/Paris-Lyon i les vistes diverses del parc Euro-Disney. Vistes de la ciutat de Paris: Torre Eiffel i Notre-Damme entre d’altres.", "tema": "viatge", "icona": "✈️", "col": "#2f6f8f", "url": "https://drive.google.com/file/d/1GJgm_HWp5XzAQ6jm_qkEAOAXepmYuQ--/view", "sortYear": 1992}, {"clip": 109, "year": "2003–2004", "desc": "Festa de Cap d’any 2003/2004 i Reis. Festa de l’aniversari del Xavier Ferré Ferré. Festa dels 50 anys del Josep Maria Cinto. Festa de la trobada d’armats a El Pla de Santa Maria", "tema": "nadal", "icona": "🎄", "col": "#9c2b2b", "url": "https://drive.google.com/file/d/1NVOFzBOZdF34FkpIIMYLB-ips1bdpuNE/view", "sortYear": 2003}, {"clip": 110, "year": "1996–1997", "desc": "Vacances de l’estiu 96 a Olot. Festes Nadal 96-97. Cap d’any a Rupit.", "tema": "nadal", "icona": "🎄", "col": "#9c2b2b", "url": "https://drive.google.com/file/d/1G4Znye7d0sBo3Re-8qlpEMt7T5ZBNPRi/view", "sortYear": 1996}, {"clip": 111, "year": "1992", "desc": "Carnaval nens escoles d’el Pla (23/2/92). Carnaval a casa dels pares de la Berta. Carnaval del Pla 92. Braç enguixat Albert abril 92. Mona (20/4/92)", "tema": "carnaval", "icona": "🎭", "col": "#7a4fa0", "url": "https://drive.google.com/file/d/1PwYIowuXANE8DL8nJw_Nm65yEavT6_uy/view", "sortYear": 1992}, {"clip": 112, "year": "1995", "desc": "Vacances d’estiu a EURODISNEY/París. (Setmana del 27/6/95 al 7/7/95). Vistes del viatge d’anada del 1r i 2n dia a Eurodisney i al Davy Crocket Ranch. (1a CINTA)", "tema": "viatge", "icona": "✈️", "col": "#2f6f8f", "url": "https://drive.google.com/file/d/1gROXpC6M8c1nZej2Jxki7e5mI-FmXoUD/view", "sortYear": 1995}, {"clip": 113, "year": "1995", "desc": "Vacances d’estiu a EURODISNEY/París. (Setmana del 27/6/95 al 7/7/95) (2a CINTA)", "tema": "viatge", "icona": "✈️", "col": "#2f6f8f", "url": "https://drive.google.com/file/d/1epKkMDf2CWYT5amdAAWISiEDiTGBSRwo/view", "sortYear": 1995}, {"clip": 114, "year": "1995–1996", "desc": "Vacances d’estiu a EURODISNEY/París. (Setmana del 27/6/95 al 7/7/95) (3a CINTA). Barri del Carme 1995 - 10è aniversari juliol. Fira 1995 - Pavelló i desfilada Elena. Nadal 1995-1996/Cap d’any a Rupit.", "tema": "viatge", "icona": "✈️", "col": "#2f6f8f", "url": "", "sortYear": 1995}, {"clip": 115, "year": "1992", "desc": "Anada a Viella: 3,4,5,6 setembre 1992. Casament de Maria dels Àngels i Rafel (12 setembre 1992, Poblet). Filmacions del pavelló (26/9/92)", "tema": "casament", "icona": "💍", "col": "#a8743f", "url": "", "sortYear": 1992}, {"clip": 116, "year": "2001–2003", "desc": "36è aniversari Gemma 11/8/01. Maquillatge de la Gemma, Elena (Setembre 01), Nadal 2001. Festes, dinar, cagar el tió, Valls (St. Esteve),  1er aniversari Joan Magriñà. Carnaval 2002 (nens al carrer). Pintar la saleta (22/03/02). Tots els tres nens al nostre llit damunt. L’Hotel Nuñez Urgoll/ Roca Sr. Roca (Fiat) (18/04/02). Sopar de cal Faló (Reis 4/01/03). Trobada Magriñà-González amb nosaltres 5/1/03. Reis 2003:Regals a ca la Padrina. Sopar a cal Magriñà-Fontanillas. Aniversari Joan Ramon 43 anys (31/01/03)", "tema": "nadal", "icona": "🎄", "col": "#9c2b2b", "url": "", "sortYear": 2001}, {"clip": 117, "year": "1991", "desc": "Montserrat a peu. (1,2,3/11/91)", "tema": "muntanya", "icona": "🏔️", "col": "#4a7a52", "url": "https://drive.google.com/file/d/1E3A_9qivGVww0Us-2R2BhyuJrW_nZzJE/view", "sortYear": 1991}, {"clip": 118, "year": "2005–2008", "desc": "Fragments del dia de Nadal a casa nostra (23/12/05). Fragments del sopar de cap d’any 2005/2006. Comunió de l’Ignasi 25/05/06. 50è aniversari de la Maria Amàlia (13/06/06). Festes de Nadal, Cap d’any i Reis (2006/2007), 70 anys de la Consol (472/07). 80 anys de la padrina Pepita Barrina (20/01/08) (Dia de la Festa)", "tema": "nadal", "icona": "🎄", "col": "#9c2b2b", "url": "", "sortYear": 2005}, {"clip": 119, "year": "1994", "desc": "Setmana Santa 1994: Anada a Roses. Francesc amb el peu envenat. Aniversari del Francesc. Aniversari de l’Eva Rosato (23/5/94). Aniveresari de l’Elena (3/6/94).", "tema": "aniversari", "icona": "🎂", "col": "#b06a1f", "url": "", "sortYear": 1994}, {"clip": 120, "year": "1994", "desc": "Anada a Andorra 3-4 setembre (per lliure) amb la colla de sardanes. Anada a Caldea el dia 3/9/94. Dinar del “homes” a la Vallesca (11/9/94). Nadal 94: Festes diverses, teatre Albert, regals dia de Nadal, cagar el tió a casa i a cal Pons.", "tema": "viatge", "icona": "✈️", "col": "#2f6f8f", "url": "", "sortYear": 1994}, {"clip": 121, "year": "1990", "desc": "Filmacions diverses octubre/novembre 1990. Desfilada de models, cal Biosca, casa nostra 3r pis, dinar casa Consol (avi Artur), dinar a casa nostra 3r pis/Valentí, dinar casa nova oncle Joan.", "tema": "espectacle", "icona": "🎬", "col": "#3a6f5f", "url": "", "sortYear": 1990}, {"clip": 122, "year": "2003", "desc": "Funció de l’Albert “La Fàbrica”(6/6/03). Aniversari de l’Elena 10 anys(6/6/03). Confirmació del Francesc: Església i festa (27/9/03). Festes de Nadal del 2003. Aniversari del Xavier Ferré i Ferré (27/12/03) 20 anys.", "tema": "nadal", "icona": "🎄", "col": "#9c2b2b", "url": "", "sortYear": 2003}, {"clip": 123, "year": "2001", "desc": "Vacances a Menorca 29/6/01 - 11/07/01", "tema": "viatge", "icona": "✈️", "col": "#2f6f8f", "url": "", "sortYear": 2001}, {"clip": 124, "year": "2003", "desc": "50 anys de casats dels padrins Rafel i Pepita ( Abril 2003)", "tema": "casament", "icona": "💍", "col": "#a8743f", "url": "", "sortYear": 2003}, {"clip": 125, "year": "2005", "desc": "Aniversari de l’Eduard a la botiga del Josep Maria (9/10/05). Viatge a Tenerife (23/10/05-30/10/05)", "tema": "viatge", "icona": "✈️", "col": "#2f6f8f", "url": "", "sortYear": 2005}, {"clip": 126, "year": "1992", "desc": "1 Viatge a Miami / El Salvador. Dies 2, 3, 4 de març 1992. Vistes dels aeroports de BCN, MAD, MIA. Vistes avió interior i exterior (CANADÀ). Vistes de l’hotel i derivats de Miami International. Arribada a El Salvador. Vistes de l’aeroport fins a la casa dels oncles. Vistes del magatzem, botiga i annexos del negoci dels oncles.", "tema": "viatge", "icona": "✈️", "col": "#2f6f8f", "url": "", "sortYear": 1992}, {"clip": 127, "year": "1992", "desc": "2 Viatge a El Salvador. Dies 4 i 5 de març 1992.  Dia 4: Vistes nocturnes (deficients) del sopar i la vivenda dels pares de la Deby. Dia 5: Vistes del parament floral a la vivenda dels oncles. Regal de noces de la Deby i Xavier entre d’altres. Festa nocturna a casa dels Artiñano.", "tema": "viatge", "icona": "✈️", "col": "#2f6f8f", "url": "", "sortYear": 1992}, {"clip": 128, "year": "1992", "desc": "3 Viatge a El Salvador. Dies 7, 8 i 9 de març del 1992. Part del casament, preses vàries de diferents escenes. Finca de Sant Diego (oncles) i finca de Sihuapilapa (Jokish - Soberano)", "tema": "viatge", "icona": "✈️", "col": "#2f6f8f", "url": "", "sortYear": 1992}, {"clip": 129, "year": "1992", "desc": "4 Viatge a El Salvador. Dia 8 març de 1992. Sihuapilapa: Vivenda de platja dels Jokish-Soberano. Dia 10 març 1992. Cerro Verde volcà Izalco.", "tema": "viatge", "icona": "✈️", "col": "#2f6f8f", "url": "", "sortYear": 1992}, {"clip": 130, "year": "1992", "desc": "5 Viatge a El Salvador. Dia 10 de març del 1992: Preses diverses del Cerro Verde i el Volcà Izalco. Llac de Coatepeque. Dia 11 de març del 1992: Berenar a la vivenda de Carmen Elena i vàries preses de la casa. Dia 12 de març del 1992. Algunes preses del Tazumal a Chalchuapa.", "tema": "viatge", "icona": "✈️", "col": "#2f6f8f", "url": "", "sortYear": 1992}, {"clip": 131, "year": "1992", "desc": "6 Viatge a El Salvador. Dia 12 de març del 1992: Vistes de Chalchuapa i les restes històriques del Tazumal. Dia 14 de març del 1992: Anada a la barra de Santiago (Finca dels Artiñano-Maestre) “Quasi bé un safari” Diferents preses i escenes de les activitats allí (Jet Sky, banyada a la bacana, etc.)", "tema": "viatge", "icona": "✈️", "col": "#2f6f8f", "url": "", "sortYear": 1992}, {"clip": 132, "year": "1992", "desc": "7 Viatge a El Salvador. Dia 14 i 15 març del 1992. Anada a la finca, activitats i vistes de la Barra de Santiago. Canals interns de la Barra de Santiago. Tornada cap a San Salvador: Vistes del viatge de tornada i arribada  la casa dels oncles.", "tema": "viatge", "icona": "✈️", "col": "#2f6f8f", "url": "", "sortYear": 1992}, {"clip": 133, "year": "1992", "desc": "8 Viatge a El Salvador. Dia 16 març 1992: Arribada a Miami i vistes de l’apartament dels oncles. Vistes nocturnes de diferents barris de Miami. Dia 17 de març del 1992: Vistes diurnes de Miami i els diferents shows i atraccions al Sea Aquarium de Miami.", "tema": "viatge", "icona": "✈️", "col": "#2f6f8f", "url": "", "sortYear": 1992}, {"clip": 134, "year": "1992", "desc": "9 Viatge a El Salvador. Dia 17 de març de 1992: Miami vistes d’atraccions del PARROT JUNGLE i del parc. Dia 18 de març de 1992: DISNEYWORLD EPCOT. Dia 19 de març de 1992: DISNEYWORLD vistes dels estudis de MGM.", "tema": "viatge", "icona": "✈️", "col": "#2f6f8f", "url": "", "sortYear": 1992}, {"clip": 135, "year": "1992", "desc": "10 Viatge a El Salvador. Dia 19 de març de 1992: DISNEYWORLD, vistes dels estudis de de la MGM. Dia 20 de març del 1992: DISNEYWORLD, vistes del MAGIC KINGDOM. Dia 21 de març del 1992: Cap Kennedy.", "tema": "viatge", "icona": "✈️", "col": "#2f6f8f", "url": "", "sortYear": 1992}, {"clip": 136, "year": "1990–1991", "desc": "Filmacions desembre 90 - gener 91 ( Nadal 1990 ) Arribada del patge dels reis 1/01/91. Filmacions pessebre casa oncles. Arribada dels reis 5/01/91. Lliurament dels regals i arribada dels reis al 3r pis. Lliurament dels reis de Valls. Falo-Dalmau, Rosato-Albareda 6/01/91.", "tema": "nadal", "icona": "🎄", "col": "#9c2b2b", "url": "", "sortYear": 1990}, {"clip": 137, "year": "1991–1992", "desc": "Sortida a la muntanya amb el NISSAN de l’Anton 29/06/91 Rojals. Sortida a la muntanya amb el NISSAN de l’Anton 13/07/91 Selmella/Montagut. Nevades del dia 22 i 23 de gener del 1992. Les primeres passes de l’Albert 2/2/92. Disfresses del dia 23/2/92.", "tema": "carnaval", "icona": "🎭", "col": "#7a4fa0", "url": "", "sortYear": 1991}, {"clip": 138, "year": "1998–1999", "desc": "Nadal, Cap d’any i Reis del 1998/99. Carnavals, recitals de música Albert. Dinar dels amics F.Professional de Valls. Aniversari de l’Elena, fent pipi els nens i inicis vacances estiu del 1999.", "tema": "nadal", "icona": "🎄", "col": "#9c2b2b", "url": "", "sortYear": 1998}, {"clip": 139, "year": "1999–2000", "desc": "Nadal 99. Cap d'any i Reis 2000. Disfressa de princesa de l'Elena. St. Jordi del 2000, dinar a cal Carles. Sortida a Núria 28/29 abril 2000 entre d'altres filmacions: Final de curs nens i nena a el Pla. Filmacions eròtiques de la Gemma. Recollir premi a Santes Creus del Francesc 1/10/00. Dinar a cal Vinyet tots els cintos i oncles 6/12/00. Regals del Pare Noel del dia 25 de desembre del 2000.", "tema": "nadal", "icona": "🎄", "col": "#9c2b2b", "url": "", "sortYear": 1999}, {"clip": 140, "year": "2004–2005", "desc": "Aniversari de la Teresa Albareda - 40 anys a Ca Fèlix. Festes de Nadal 2004/2005. 14 anys de l’Albert. Sopar. Detalls d’un esmorzar de diumenge. Ball de fi de curs de l’Elena a l’abadia (parròquia). Filmació de l’Elena amb la protecció del cabell el dia del casament de l’Eduard. Filmacions prèvies 2/07/05.", "tema": "nadal", "icona": "🎄", "col": "#9c2b2b", "url": "", "sortYear": 2004}, {"clip": 141, "year": "1994", "desc": "Menorca 1994 (2) (Juny-juliol) Filmacions de la nena i la resta de família - Estiu del 94. Andorra - Encamp (3-4 setembre ’94)", "tema": "viatge", "icona": "✈️", "col": "#2f6f8f", "url": "", "sortYear": 1994}, {"clip": 142, "year": "1993", "desc": "Bateig de l’Elena: Divendres 30 juliol 93 - Sopar de Cal Biosca. Dissabte 31 de juliol 93 - Bateig de l’Elena a l’església i festa al restaurant. Diumenge 1 agost 93 dinar al Carreró de Cal Faló. Diumenge dia 22 agost del 93 - Dia de les Dones al Carreró de Cal Faló.", "tema": "cerimonia", "icona": "⛪", "col": "#6a4a8f", "url": "", "sortYear": 1993}, {"clip": 143, "year": "1997–1998", "desc": "Comunió del Francesc (2). Sortida als Sants Metges (14 setembre 97). Bateig de l’Ignasi (12 octubre 97). Nadal 97-98. Àpats i sortida a Rupit. Reis 98. Carnaval 98. Setmana Santa 98: Sortida a la casa de pagès francesa. Final de curs 97/98: Obra de Teatre.", "tema": "nadal", "icona": "🎄", "col": "#9c2b2b", "url": "", "sortYear": 1997}, {"clip": 144, "year": "1994", "desc": "Cavalcada de Reis i repartiment (5 de gener 94). Dia 6 de gener 94: Reis al 3r Pis amb Dalmau-Faló/Rosato-Albareda. Dia 12 de febrer del 94: Carnaval i la rua del 94. Dia 20 de febrer 94: la nena amb les “carrutxes”. Filmacions dels nens difressats (26 FEBRER 94). Calçotada a cal Biosca (6 de març 94). Calçotada a cal Faló (13 de març 94)", "tema": "nadal", "icona": "🎄", "col": "#9c2b2b", "url": "", "sortYear": 1994}, {"clip": 145, "year": "2005", "desc": "Casament de l’Eduard (2/7/05). Recollir (l’Elena) el premi de l’Esclat (7/7/05). Aniversari de la Gemma - 40 anys (11/08/05). Festa de celebració dels 40 anys de ka Gemma al Trastevere (21/08/05)", "tema": "casament", "icona": "💍", "col": "#a8743f", "url": "", "sortYear": 2005}, {"clip": 146, "year": "1991–1992", "desc": "Fira 1991 novembre. Sopar Cap d’Any/Casa tiets/Biosques 31-12-91. Reis 1992.", "tema": "nadal", "icona": "🎄", "col": "#9c2b2b", "url": "", "sortYear": 1991}, {"clip": 147, "year": "2000–2001", "desc": "Dia de Nadal 2000 a casa nostra. Cap d’any Sant Joan de l’Erm, nosaltres, Àngels i Albert Biosca. Reis 2001 i façana il·luminada de casa nostra entre d’altres. Jubilació de l’Alberta Biosa a Cal Biosca amb tots (11 de març 2001). Vacances a Menorca (21/06/01).", "tema": "viatge", "icona": "✈️", "col": "#2f6f8f", "url": "", "sortYear": 2000}, {"clip": 148, "year": "1995–1996", "desc": "Nadal 95-96. Cap d’any a Rupit (2). Disfresses de Carnaval ’96: Els nens. Aniversari 5 anys Albert: Sopar Colla. Dia de la Mona (A Valls i al Pla). Dia 21 abril ’96: Casament del Joan Boronat. Dia 27 de maig ’96: Excursió al Tibidabo.", "tema": "nadal", "icona": "🎄", "col": "#9c2b2b", "url": "", "sortYear": 1995}, {"clip": 149, "year": "2002–2003", "desc": "Comunió Elena (2002). Aniversari de la Gemma - 37 anys (11/08/02). Saleta d’estiu - Esmorzar dels nens. Filmacions de la Gemma amb cuetes. Muntatge de l’arbre i pessebre de Nadal (Setamana del pont del 6/8-12/02). Sopar de la nit de Nadal a Cal Carles 24/12/02. Dinar de Nadal a casa nostra (25/12/02). Filmacions del meu sopar de l’aniversari 31/01/03.", "tema": "nadal", "icona": "🎄", "col": "#9c2b2b", "url": "", "sortYear": 2002}, {"clip": 150, "year": "1995", "desc": "Casament Carles i Anna, 23 abril del 1995. Comunió Jordi Garcia, 28 de maig de 1995.", "tema": "cerimonia", "icona": "⛪", "col": "#6a4a8f", "url": "", "sortYear": 1995}, {"clip": 151, "year": "1993–1994", "desc": "Dia 25 de desembre 1993. “Cagar el tió” al 3r pis amb tots nosaltres, Boronat i Falons. Pastorets: nen Jesús (Elena). Dia 31/12/93: Sopar de Cap d’Any. Dia 1/1/94: Patge Reial i “Cagar el Tió” a Ca Pons.", "tema": "nadal", "icona": "🎄", "col": "#9c2b2b", "url": "", "sortYear": 1993}, {"clip": 152, "year": "1993", "desc": "Dia 28 de novembre de 1993. Celebració dels 65 anys del pare a cal “Sapero” de Santes Creus. Dia 25 de desembre de 1993. Celebració d’una part del dinar de Nadal (25 de desembre del 1993 al 3r pis)", "tema": "nadal", "icona": "🎄", "col": "#9c2b2b", "url": "", "sortYear": 1993}, {"clip": 153, "year": "1991–1993", "desc": "Dia 23 juny 1991. Revetlla de Sant Joan a Ca Pons. Dia 13 de juliol 1991: Sopar organització barri a casa tiets xocolatada a la matinada. Dia 26 juny del 1993: Sopar de l’organització del barri a Casa dels oncles.", "tema": "familia", "icona": "🎞️", "col": "#7a6a52", "url": "", "sortYear": 1991}, {"clip": 154, "year": "1991", "desc": "Diada bicicleta. Preses del nen. Preses de la comunió de l’Albert Masgoret. Dia de Corpus Christi. Dia 23 juny de 1991: Ca Pons", "tema": "cerimonia", "icona": "⛪", "col": "#6a4a8f", "url": "", "sortYear": 1991}, {"clip": 155, "year": "1992", "desc": "31 de maig de 1992. Comunió del Xavier. Dia 24 i 25 de desembre de 1992: Nadal - (algunes filmacions)", "tema": "nadal", "icona": "🎄", "col": "#9c2b2b", "url": "", "sortYear": 1992}, {"clip": 156, "year": "1994–1995", "desc": "156 - Cap d'any 94 - 95. Nit de reis 1995. Reis any 1995, Dalmau, Faló, Rosato i Albareda. Calçotada Cal Biosca- 5 febrer 1995. Calçotada Cal Biosca 11 març 1995, aniversari Albert. Dia de Rams-Disfressa a Ca Pons. 13 maig 95 Fira Solsona.", "tema": "nadal", "icona": "🎄", "col": "#9c2b2b", "url": "", "sortYear": 1994}, {"clip": 157, "year": "1990", "desc": "Passi de modes: Anton Montserrat a la pista de la cooperativa. Novembre 1990.", "tema": "espectacle", "icona": "🎬", "col": "#3a6f5f", "url": "", "sortYear": 1990}, {"clip": 158, "year": "", "desc": "Dia 31 de març del 91. Dia de la mona. Paella d’arròs a cal Biosca.", "tema": "carnaval", "icona": "🎭", "col": "#7a4fa0", "url": "", "sortYear": 9999}, {"clip": 159, "year": "1991", "desc": "Bateig de l’Albert (1a CINTA) Església/A casa (Biosques) 31/03/1991", "tema": "cerimonia", "icona": "⛪", "col": "#6a4a8f", "url": "", "sortYear": 1991}, {"clip": 160, "year": "1991–1994", "desc": "Bateig de Jordi Dalmau i Falo, 28 de juliol de 1991. Esmorzar a Rojals nosaltres, 27 de juliol de 1991. Dia 2 d’octubre de 1994, filmacions de l’Elena.", "tema": "cerimonia", "icona": "⛪", "col": "#6a4a8f", "url": "", "sortYear": 1991}, {"clip": 161, "year": "1991–1992", "desc": "Festes desembre/nadal 1991. Família Capdevila-Cucurull (Úrsula) 8/12/91. Nit bona, arbre de nadal 24/12/91. Dia de Nadal, dinar i tió 25/12/91. Patge dels Reis/Cal Faló 29/12/91. Cap d’any Biosques 31/12/91. Dinar de Reis, casa dels padrins (6/1/92)", "tema": "nadal", "icona": "🎄", "col": "#9c2b2b", "url": "", "sortYear": 1991}, {"clip": 162, "year": "1991", "desc": "Dia 3 agost de 1991. Sortida amb Anton i Maite a la Mussara i Siurana. Menorca 24/31 d’agost del 1991 (1)", "tema": "viatge", "icona": "✈️", "col": "#2f6f8f", "url": "", "sortYear": 1991}, {"clip": 163, "year": "1991–1994", "desc": "Menorca 24-31 d’agost de 1991 (2a CINTA) . Menorca 30 de juny de 1994 (1). Ciutadella, vista general dels apartaments.", "tema": "viatge", "icona": "✈️", "col": "#2f6f8f", "url": "", "sortYear": 1991}, {"clip": 164, "year": "1992", "desc": "Viatge a Paris EURODISNEY (OCTUBRE 92) (2)", "tema": "viatge", "icona": "✈️", "col": "#2f6f8f", "url": "", "sortYear": 1992}, {"clip": 165, "year": "1992", "desc": "Nadal any 1992. “Cagar el tió” i dinar del dia de Nadal al 3r PIS. “Cagar el Tió” a Cal Pons. Revetlla de final d’any a casa nostra. Teresa, Ari, Angels, Albert i nosaltres.", "tema": "nadal", "icona": "🎄", "col": "#9c2b2b", "url": "", "sortYear": 1992}, {"clip": 166, "year": "1993", "desc": "Reis 1993/El Pla i Valls (Pis Josep Ramon-Berta). Dinar dels 65 anys de la padrina (El mas del Plata)", "tema": "nadal", "icona": "🎄", "col": "#9c2b2b", "url": "", "sortYear": 1993}, {"clip": 167, "year": "1993", "desc": "Dia 25 d’abril de 1993. Festa dels 40 anys del casament dels padrins. Dia 17 de novembre de 1993: Fotografia familiar dels fills per a la celebració dels 65 anys dels padrí. Dia 28 de novembre de 1993: Celebració dels 65 anys del pare a cal Saperó de Santes Creus.", "tema": "casament", "icona": "💍", "col": "#a8743f", "url": "", "sortYear": 1993}, {"clip": 168, "year": "1993–1994", "desc": "Filmacions diverses de treballs. 9 de juny de 1993: Instal·lació de la bomba del pou de l’hort del Ramon “Panseta”. 7 de gener de 1994. Instal·lació de la xemeneia de la Carme Montcusí ( Francesc) amb cordes. Dia 5 de març de 1994: Treballs efectuats a la planta de formigons del Garganté.", "tema": "treball", "icona": "🔧", "col": "#5a5a5a", "url": "", "sortYear": 1993}, {"clip": 169, "year": "1997", "desc": "Cap d’any a Rupit 1997. Reis 1997. Carnaval 1997. Vallesca.", "tema": "nadal", "icona": "🎄", "col": "#9c2b2b", "url": "", "sortYear": 1997}, {"clip": 170, "year": "1993", "desc": "Viella/Baqueira/Beret 29 agost 1993. Olot dies 18 i 19 setembre 1993.", "tema": "muntanya", "icona": "🏔️", "col": "#4a7a52", "url": "", "sortYear": 1993}, {"clip": 171, "year": "1994", "desc": "Filmacions Fira 1994. Filmacions Baixas-Lehmberg setembre 1994", "tema": "espectacle", "icona": "🎬", "col": "#3a6f5f", "url": "", "sortYear": 1994}, {"clip": 172, "year": "1999", "desc": "Eivissa-Estiu 1999 (Agost/Setembre) (2a CINTA)", "tema": "viatge", "icona": "✈️", "col": "#2f6f8f", "url": "", "sortYear": 1999}, {"clip": 173, "year": "1998", "desc": "Paris 1998 (Estiu). Sortida del 13 setembre de 1998 als boscos de Poblet.", "tema": "viatge", "icona": "✈️", "col": "#2f6f8f", "url": "", "sortYear": 1998}, {"clip": 174, "year": "2005", "desc": "Viatge a Tenerife 23-30 octubre 2005. Fragments del sopar de Nadal a cal Carles i Anna (24/12/05). Fragments d’obrir els regals de l’arbre de Nadal a casa el dia 25/12/05.", "tema": "viatge", "icona": "✈️", "col": "#2f6f8f", "url": "", "sortYear": 2005}, {"clip": 175, "year": "1997", "desc": "1a Comunió Francesc 25 de maig de 1997", "tema": "cerimonia", "icona": "⛪", "col": "#6a4a8f", "url": "", "sortYear": 1997}, {"clip": 176, "year": "", "desc": "Difusió publicitaria INSTAL·LACIONS JOAN RAMON FERRÉ", "tema": "treball", "icona": "🔧", "col": "#5a5a5a", "url": "", "sortYear": 9999}];
+DATA.forEach(it=>{ const u=(ENLLACOS[it.clip]||'').trim(); if(u) it.url=u; });
 
-const norm = s => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
-const listEl=document.getElementById('list'), countEl=document.getElementById('count'), qEl=document.getElementById('q');
-document.getElementById('total').textContent = DATA.length;
+// id del Drive per a la miniatura
+function driveId(url){ const m=(url||'').match(/\/d\/([^/]+)/); return m?m[1]:''; }
 
-// attach links
-DATA.forEach(it=>{ it.url = (ENLLACOS[it.clip]||'').trim(); });
-const ambEnllac = DATA.filter(it=>it.url).length;
+const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+const gridEl=document.getElementById('grid'), tlEl=document.getElementById('timeline');
+const qEl=document.getElementById('q'), countEl=document.getElementById('count');
+document.getElementById('total').textContent=DATA.length;
+let VIEW='grid';
+
+const ambEnllac=DATA.filter(it=>it.url).length;
 const banner=document.getElementById('banner');
-if(ambEnllac===0){
-  banner.className='banner warn';
-  banner.innerHTML='Encara no hi ha cap enlla&ccedil; de v&iacute;deo afegit. Els botons diran &laquo;pendent&raquo; fins que s\'afegeixin.';
-}else if(ambEnllac<DATA.length){
-  banner.className='banner warn';
-  banner.innerHTML='Hi ha <b>'+ambEnllac+'</b> de <b>'+DATA.length+'</b> v&iacute;deos enlla&ccedil;ats. La resta diran &laquo;pendent&raquo;.';
-}else{
-  banner.className='banner ok';
-  banner.innerHTML='Tots els v&iacute;deos estan enlla&ccedil;ats. A gaudir dels records!';
+if(ambEnllac===0){banner.className='banner warn';banner.innerHTML='Encara no hi ha enlla&ccedil;os de v&iacute;deo. Els clips diran &laquo;pendent&raquo;.';}
+else if(ambEnllac<DATA.length){banner.className='banner warn';banner.innerHTML='<b>'+ambEnllac+'</b> de <b>'+DATA.length+'</b> v&iacute;deos enlla&ccedil;ats. La resta, pendents.';}
+else{banner.className='banner ok';banner.innerHTML='Tots els v&iacute;deos enlla&ccedil;ats. A gaudir dels records!';}
+
+function esc(s){return s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function hl(t,terms){let o=esc(t);terms.forEach(x=>{if(!x)return;o=o.replace(new RegExp('('+x.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi'),'<mark>$1</mark>');});return o;}
+
+function thumbHtml(it){
+  const id=driveId(it.url);
+  const fb='<div class="fallback" style="background:linear-gradient(150deg,'+it.col+',#2e2620);"><span class="ic">'+it.icona+'</span>'+(it.year?'<span class="yr">'+it.year+'</span>':'')+'</div><div class="grain"></div>';
+  if(id){
+    // intenta la miniatura del Drive; si falla, mostra el fallback
+    return '<img src="https://drive.google.com/thumbnail?id='+id+'&sz=w600" referrerpolicy="no-referrer" '
+      +'onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\';">'
+      +'<div class="fallback" style="display:none;background:linear-gradient(150deg,'+it.col+',#2e2620);"><span class="ic">'+it.icona+'</span>'+(it.year?'<span class="yr">'+it.year+'</span>':'')+'</div><div class="grain"></div>';
+  }
+  return fb;
 }
 
-function escapeHtml(s){return s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
-function highlight(text, terms){
-  let out=escapeHtml(text);
-  terms.forEach(t=>{ if(!t)return;
-    const re=new RegExp('('+t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi');
-    out=out.replace(re,'<mark>$1</mark>');
+function tileHtml(it,terms){
+  const has=!!it.url;
+  const tag='<span class="corner">Cinta '+it.clip+'</span>';
+  const open=has?'<a class="tile" href="'+it.url+'" target="_blank" rel="noopener">':'<div class="tile pending">';
+  const close=has?'</a>':'</div>';
+  const ov=has?'<div class="play-ov"><span class="circ"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>':'<span class="pend-lbl">pendent</span>';
+  return open+'<div class="thumb">'+thumbHtml(it)+tag+ov+'</div>'
+    +'<div class="tbody">'+(it.year?'<div class="yr-tag">'+it.year+'</div>':'')+'<div class="dsc">'+hl(it.desc,terms)+'</div></div>'+close;
+}
+
+function renderGrid(items,terms){
+  if(!items.length){gridEl.innerHTML='<div class="empty"><div class="big">Cap resultat</div>Prova amb una altra paraula o un any.</div>';return;}
+  gridEl.innerHTML=items.map(it=>tileHtml(it,terms)).join('');
+}
+
+function renderTimeline(items,terms){
+  if(!items.length){tlEl.innerHTML='<div class="empty"><div class="big">Cap resultat</div>Prova amb una altra paraula o un any.</div>';return;}
+  const sorted=[...items].sort((a,b)=>a.sortYear-b.sortYear || a.clip-b.clip);
+  let html='', cur=null;
+  sorted.forEach(it=>{
+    const ylabel = it.sortYear===9999 ? 'Sense data' : it.sortYear;
+    if(ylabel!==cur){ if(cur!==null) html+='</div>'; cur=ylabel; html+='<div class="tl-year"><h2>'+ylabel+'</h2></div><div class="tl-items">'; }
+    const has=!!it.url;
+    const open=has?'<a class="tl-row" href="'+it.url+'" target="_blank" rel="noopener">':'<div class="tl-row pending">';
+    const close=has?'</a>':'</div>';
+    html+=open
+      +'<div class="tl-ic" style="background:linear-gradient(140deg,'+it.col+'33,'+it.col+'14);">'+it.icona+'</div>'
+      +'<div class="tl-main"><div class="tl-head"><span class="tl-clip">Cinta '+it.clip+'</span>'+(it.year?'<span class="tl-yr">'+it.year+'</span>':'')+'</div><div class="tl-dsc">'+hl(it.desc,terms)+'</div></div>'
+      +'<span class="tl-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>'
+      +close;
   });
-  return out;
+  html+='</div>';
+  tlEl.innerHTML=html;
 }
-function playButton(it){
-  if(it.url) return '<a class="play" href="'+it.url+'" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Veure el v&iacute;deo</a>';
-  return '<span class="play missing"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Enlla&ccedil; pendent</span>';
+
+function setView(v){
+  VIEW=v;
+  document.getElementById('btnGrid').classList.toggle('active',v==='grid');
+  document.getElementById('btnTime').classList.toggle('active',v==='time');
+  gridEl.classList.toggle('hidden',v!=='grid');
+  tlEl.classList.toggle('hidden',v!=='time');
+  search();
 }
-function render(items, terms){
-  if(!items.length){ listEl.innerHTML='<div class="empty"><div class="big">Cap resultat</div>Prova amb una altra paraula.</div>'; return; }
-  listEl.innerHTML=items.map(it=>'<article class="card"><div class="card-top"><span class="clip-badge">Cinta '+it.clip+'</span></div><p class="desc">'+highlight(it.desc,terms)+'</p>'+playButton(it)+'</article>').join('');
-}
+
 function search(){
   const raw=qEl.value.trim();
   const terms=raw.split(/\s+/).filter(Boolean);
-  const nterms=terms.map(norm);
-  let res = !nterms.length ? DATA : DATA.filter(it=>{
-    const hay=norm(it.desc+' '+it.clip);
-    return nterms.every(t=>hay.includes(t));
-  });
-  countEl.innerHTML = raw ? '<b>'+res.length+'</b> '+(res.length===1?'cinta trobada':'cintes trobades') : 'Mostrant les <b>'+DATA.length+'</b> cintes';
-  render(res, terms);
+  const nt=terms.map(norm);
+  const res=!nt.length?DATA:DATA.filter(it=>{const h=norm(it.desc+' '+it.clip+' '+(it.year||'')+' '+it.tema);return nt.every(t=>h.includes(t));});
+  countEl.innerHTML=raw?'<b>'+res.length+'</b> '+(res.length===1?'cinta trobada':'cintes trobades'):'Mostrant les <b>'+DATA.length+'</b> cintes';
+  if(VIEW==='grid') renderGrid(res,terms); else renderTimeline(res,terms);
 }
-qEl.addEventListener('input', search);
+qEl.addEventListener('input',search);
 search();
 </script>
 </body>
