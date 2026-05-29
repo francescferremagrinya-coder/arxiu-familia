@@ -246,14 +246,17 @@ function hl(t,terms){let o=esc(t);terms.forEach(x=>{if(!x)return;o=o.replace(new
 
 function thumbHtml(it){
   const id=driveId(it.url);
-  const fb='<div class="fallback" style="background:linear-gradient(150deg,'+it.col+',#2e2620);"><span class="ic">'+it.icona+'</span>'+(it.year?'<span class="yr">'+it.year+'</span>':'')+'</div><div class="grain"></div>';
-  if(id){
-    // intenta la miniatura del Drive; si falla, mostra el fallback
-    return '<img src="https://drive.google.com/thumbnail?id='+id+'&sz=w600" referrerpolicy="no-referrer" '
-      +'onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\';">'
-      +'<div class="fallback" style="display:none;background:linear-gradient(150deg,'+it.col+',#2e2620);"><span class="ic">'+it.icona+'</span>'+(it.year?'<span class="yr">'+it.year+'</span>':'')+'</div><div class="grain"></div>';
-  }
-  return fb;
+  const fbColors='background:linear-gradient(150deg,'+it.col+',#2e2620);';
+  const fbInner='<span class="ic">'+it.icona+'</span>'+(it.year?'<span class="yr">'+it.year+'</span>':'');
+  // Cadena de fallback: 1) imatges/NUM.jpg locals  2) miniatura Drive  3) targeta de color
+  const localSrc='imatges/'+it.clip+'.jpg';
+  const driveSrc=id?'https://drive.google.com/thumbnail?id='+id+'&sz=w600':'';
+  // onerror passa a Drive (si hi és) o directament al fallback
+  const onerrLocal=driveSrc
+    ? "this.onerror=function(){this.style.display='none';this.nextElementSibling.style.display='flex';};this.src='"+driveSrc+"';this.referrerPolicy='no-referrer';"
+    : "this.style.display='none';this.nextElementSibling.style.display='flex';";
+  return '<img src="'+localSrc+'" loading="lazy" onerror="'+onerrLocal+'">'
+    +'<div class="fallback" style="display:none;'+fbColors+'">'+fbInner+'</div><div class="grain"></div>';
 }
 
 function tileHtml(it,terms){
