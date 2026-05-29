@@ -46,29 +46,35 @@
   .banner.warn{background:rgba(176,131,34,.12);border:1px solid rgba(176,131,34,.4);color:var(--ink-soft);}
   .banner.ok{background:rgba(60,120,60,.1);border:1px solid rgba(60,120,60,.35);color:#3a5a30;}
 
-  /* GRAELLA tipus Netflix */
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px;margin-top:6px;}
-  .tile{position:relative;border-radius:14px;overflow:hidden;background:var(--card);border:1px solid var(--line);box-shadow:0 3px 12px var(--shadow);cursor:pointer;text-decoration:none;color:inherit;display:block;animation:rise .4s ease both;transition:transform .18s,box-shadow .18s;}
-  .tile:hover{transform:translateY(-4px) scale(1.015);box-shadow:0 12px 28px var(--shadow);}
-  @keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
-  .thumb{position:relative;aspect-ratio:16/10;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+  /* LLISTA amb miniatura */
+  .grid{display:flex;flex-direction:column;gap:14px;margin-top:6px;max-width:760px;margin-left:auto;margin-right:auto;}
+  .tile{position:relative;border-radius:14px;overflow:hidden;background:var(--card);border:1px solid var(--line);box-shadow:0 2px 10px var(--shadow);text-decoration:none;color:inherit;display:flex;animation:rise .4s ease both;transition:transform .15s,box-shadow .15s;}
+  .tile:hover{transform:translateX(3px);box-shadow:0 6px 18px var(--shadow);}
+  .tile.pending{opacity:.85;}
+  @keyframes rise{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+  .thumb{flex-shrink:0;position:relative;width:180px;aspect-ratio:16/10;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#2e2620;}
   .thumb img{width:100%;height:100%;object-fit:cover;display:block;}
   .thumb .fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;}
-  .thumb .fallback .ic{font-size:2.6rem;filter:saturate(.85);}
-  .thumb .fallback .yr{font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:1.5rem;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.35);}
-  .thumb .grain{position:absolute;inset:0;opacity:.13;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
-  .play-ov{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(20,12,6,.0);transition:background .18s;}
-  .tile:hover .play-ov{background:rgba(20,12,6,.28);}
-  .play-ov .circ{width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(.7);transition:all .2s;}
+  .thumb .fallback .ic{font-size:2.2rem;filter:saturate(.85);}
+  .thumb .fallback .yr{font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:1.2rem;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.35);}
+  .thumb .grain{position:absolute;inset:0;opacity:.12;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+  .play-ov{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(20,12,6,0);transition:background .18s;}
+  .tile:hover .play-ov{background:rgba(20,12,6,.32);}
+  .play-ov .circ{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(.7);transition:all .2s;}
   .tile:hover .play-ov .circ{opacity:1;transform:scale(1);}
-  .play-ov .circ svg{width:22px;height:22px;fill:var(--accent);margin-left:3px;}
-  .tile .corner{position:absolute;top:10px;left:10px;font-family:'Fraunces',serif;font-weight:600;font-size:.8rem;background:rgba(46,38,32,.82);color:var(--paper);padding:3px 10px;border-radius:999px;backdrop-filter:blur(3px);}
-  .tile.pending .corner{background:rgba(120,110,95,.85);}
-  .tbody{padding:12px 13px 14px;}
-  .tbody .yr-tag{font-family:'Fraunces',serif;font-style:italic;font-weight:600;color:var(--accent);font-size:1.05rem;}
-  .tbody .dsc{font-size:.9rem;color:var(--ink);line-height:1.45;margin-top:3px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+  .play-ov .circ svg{width:18px;height:18px;fill:var(--accent);margin-left:2px;}
+  .tbody{flex:1;min-width:0;padding:14px 16px 14px 16px;display:flex;flex-direction:column;gap:6px;}
+  .tbody .head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .tbody .clip-tag{font-family:'Fraunces',serif;font-weight:600;font-size:.85rem;background:var(--ink);color:var(--paper);padding:3px 10px;border-radius:999px;}
+  .tile.pending .clip-tag{background:rgba(120,110,95,.85);}
+  .tbody .yr-tag{font-family:'Fraunces',serif;font-style:italic;font-weight:600;color:var(--accent);font-size:1.1rem;}
+  .tbody .dsc{font-size:.96rem;color:var(--ink);line-height:1.5;}
   .tbody .dsc mark{background:rgba(176,131,34,.34);border-radius:3px;padding:0 1px;}
-  .pend-lbl{position:absolute;bottom:10px;right:10px;font-size:.7rem;font-weight:600;background:rgba(120,110,95,.9);color:#fff;padding:2px 8px;border-radius:999px;}
+  .pend-lbl{font-size:.7rem;font-weight:600;background:rgba(120,110,95,.9);color:#fff;padding:2px 8px;border-radius:999px;margin-left:auto;}
+  @media(max-width:560px){
+    .tile{flex-direction:column;}
+    .thumb{width:100%;aspect-ratio:16/9;}
+  }
 
   /* TIMELINE */
   .timeline{margin-top:10px;position:relative;}
@@ -79,11 +85,7 @@
   .tl-row{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:13px;padding:12px 14px;box-shadow:0 2px 9px var(--shadow);text-decoration:none;color:inherit;transition:transform .15s,box-shadow .15s;animation:rise .35s ease both;}
   .tl-row:hover{transform:translateX(4px);box-shadow:0 6px 16px var(--shadow);}
   .tl-ic{flex-shrink:0;width:46px;height:46px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;}
-  .tl-thumb{flex-shrink:0;width:84px;height:54px;border-radius:9px;overflow:hidden;position:relative;background:#2e2620;box-shadow:0 1px 4px rgba(0,0,0,.18);}
-  .tl-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
-  .tl-fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
-  .tl-fallback .ic-sm{font-size:1.6rem;filter:saturate(.85);}
-  @media(max-width:560px){.tl-thumb{width:68px;height:44px;}}
+
   .tl-main{flex:1;min-width:0;}
   .tl-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;}
   .tl-clip{font-family:'Fraunces',serif;font-weight:600;font-size:.82rem;background:var(--ink);color:var(--paper);padding:2px 9px;border-radius:999px;}
@@ -124,7 +126,7 @@
       <div class="toggle">
         <button id="btnGrid" class="active" onclick="setView('grid')">
           <svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
-          Graella
+          Llista
         </button>
         <button id="btnTime" onclick="setView('time')">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="4" x2="12" y2="20"/><circle cx="12" cy="7" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="13" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="18" r="1.3" fill="currentColor" stroke="none"/></svg>
@@ -264,27 +266,21 @@ function thumbHtml(it){
     +'<div class="fallback" style="display:none;'+fbColors+'">'+fbInner+'</div><div class="grain"></div>';
 }
 
-function tlThumbHtml(it){
-  const id=driveId(it.url);
-  const fbColors='background:linear-gradient(140deg,'+it.col+',#2e2620);';
-  const fbInner='<span class="ic-sm">'+it.icona+'</span>';
-  const localSrc='imatges/'+it.clip+'.png';
-  const driveSrc=id?'https://drive.google.com/thumbnail?id='+id+'&sz=w300':'';
-  const onerrLocal=driveSrc
-    ? "this.onerror=function(){this.style.display='none';this.nextElementSibling.style.display='flex';};this.src='"+driveSrc+"';this.referrerPolicy='no-referrer';"
-    : "this.style.display='none';this.nextElementSibling.style.display='flex';";
-  return '<img src="'+localSrc+'" loading="lazy" onerror="'+onerrLocal+'">'
-    +'<div class="tl-fallback" style="display:none;'+fbColors+'">'+fbInner+'</div>';
-}
-
 function tileHtml(it,terms){
   const has=!!it.url;
-  const tag='<span class="corner">Cinta '+it.clip+'</span>';
   const open=has?'<a class="tile" href="'+it.url+'" target="_blank" rel="noopener">':'<div class="tile pending">';
   const close=has?'</a>':'</div>';
-  const ov=has?'<div class="play-ov"><span class="circ"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>':'<span class="pend-lbl">pendent</span>';
-  return open+'<div class="thumb">'+thumbHtml(it)+tag+ov+'</div>'
-    +'<div class="tbody">'+(it.year?'<div class="yr-tag">'+it.year+'</div>':'')+'<div class="dsc">'+hl(it.desc,terms)+'</div></div>'+close;
+  const ov=has?'<div class="play-ov"><span class="circ"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>':'';
+  return open
+    +'<div class="thumb">'+thumbHtml(it)+ov+'</div>'
+    +'<div class="tbody">'
+    +'<div class="head"><span class="clip-tag">Cinta '+it.clip+'</span>'
+    +(it.year?'<span class="yr-tag">'+it.year+'</span>':'')
+    +(has?'':'<span class="pend-lbl">pendent</span>')
+    +'</div>'
+    +'<div class="dsc">'+hl(it.desc,terms)+'</div>'
+    +'</div>'
+    +close;
 }
 
 function renderGrid(items,terms){
@@ -303,7 +299,7 @@ function renderTimeline(items,terms){
     const open=has?'<a class="tl-row" href="'+it.url+'" target="_blank" rel="noopener">':'<div class="tl-row pending">';
     const close=has?'</a>':'</div>';
     html+=open
-      +'<div class="tl-thumb">'+tlThumbHtml(it)+'</div>'
+      +'<div class="tl-ic" style="background:linear-gradient(140deg,'+it.col+'33,'+it.col+'14);">'+it.icona+'</div>'
       +'<div class="tl-main"><div class="tl-head"><span class="tl-clip">Cinta '+it.clip+'</span>'+(it.year?'<span class="tl-yr">'+it.year+'</span>':'')+'</div><div class="tl-dsc">'+hl(it.desc,terms)+'</div></div>'
       +'<span class="tl-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>'
       +close;
