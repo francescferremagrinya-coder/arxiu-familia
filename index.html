@@ -79,6 +79,11 @@
   .tl-row{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:13px;padding:12px 14px;box-shadow:0 2px 9px var(--shadow);text-decoration:none;color:inherit;transition:transform .15s,box-shadow .15s;animation:rise .35s ease both;}
   .tl-row:hover{transform:translateX(4px);box-shadow:0 6px 16px var(--shadow);}
   .tl-ic{flex-shrink:0;width:46px;height:46px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;}
+  .tl-thumb{flex-shrink:0;width:84px;height:54px;border-radius:9px;overflow:hidden;position:relative;background:#2e2620;box-shadow:0 1px 4px rgba(0,0,0,.18);}
+  .tl-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
+  .tl-fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+  .tl-fallback .ic-sm{font-size:1.6rem;filter:saturate(.85);}
+  @media(max-width:560px){.tl-thumb{width:68px;height:44px;}}
   .tl-main{flex:1;min-width:0;}
   .tl-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;}
   .tl-clip{font-family:'Fraunces',serif;font-weight:600;font-size:.82rem;background:var(--ink);color:var(--paper);padding:2px 9px;border-radius:999px;}
@@ -259,6 +264,19 @@ function thumbHtml(it){
     +'<div class="fallback" style="display:none;'+fbColors+'">'+fbInner+'</div><div class="grain"></div>';
 }
 
+function tlThumbHtml(it){
+  const id=driveId(it.url);
+  const fbColors='background:linear-gradient(140deg,'+it.col+',#2e2620);';
+  const fbInner='<span class="ic-sm">'+it.icona+'</span>';
+  const localSrc='imatges/'+it.clip+'.png';
+  const driveSrc=id?'https://drive.google.com/thumbnail?id='+id+'&sz=w300':'';
+  const onerrLocal=driveSrc
+    ? "this.onerror=function(){this.style.display='none';this.nextElementSibling.style.display='flex';};this.src='"+driveSrc+"';this.referrerPolicy='no-referrer';"
+    : "this.style.display='none';this.nextElementSibling.style.display='flex';";
+  return '<img src="'+localSrc+'" loading="lazy" onerror="'+onerrLocal+'">'
+    +'<div class="tl-fallback" style="display:none;'+fbColors+'">'+fbInner+'</div>';
+}
+
 function tileHtml(it,terms){
   const has=!!it.url;
   const tag='<span class="corner">Cinta '+it.clip+'</span>';
@@ -285,7 +303,7 @@ function renderTimeline(items,terms){
     const open=has?'<a class="tl-row" href="'+it.url+'" target="_blank" rel="noopener">':'<div class="tl-row pending">';
     const close=has?'</a>':'</div>';
     html+=open
-      +'<div class="tl-ic" style="background:linear-gradient(140deg,'+it.col+'33,'+it.col+'14);">'+it.icona+'</div>'
+      +'<div class="tl-thumb">'+tlThumbHtml(it)+'</div>'
       +'<div class="tl-main"><div class="tl-head"><span class="tl-clip">Cinta '+it.clip+'</span>'+(it.year?'<span class="tl-yr">'+it.year+'</span>':'')+'</div><div class="tl-dsc">'+hl(it.desc,terms)+'</div></div>'
       +'<span class="tl-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>'
       +close;
