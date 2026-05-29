@@ -249,7 +249,7 @@ function thumbHtml(it){
   const fbColors='background:linear-gradient(150deg,'+it.col+',#2e2620);';
   const fbInner='<span class="ic">'+it.icona+'</span>'+(it.year?'<span class="yr">'+it.year+'</span>':'');
   // Cadena de fallback: 1) imatges/NUM.jpg locals  2) miniatura Drive  3) targeta de color
-  const localSrc='imatges/'+it.clip+'.jpg';
+  const localSrc='imatges/'+it.clip+'.png';
   const driveSrc=id?'https://drive.google.com/thumbnail?id='+id+'&sz=w600':'';
   // onerror passa a Drive (si hi és) o directament al fallback
   const onerrLocal=driveSrc
